@@ -7,3 +7,12 @@
 
 Typst is a markup like typsetting system written in Rust.
 
+* Webpage
+
+** General
+
+https://typst.app/
+
+** Github
+
+https://github.com/typst/typst
