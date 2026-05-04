@@ -1,0 +1,9 @@
+#+title: Typst
+#+STARTUP: overview
+#+STARTUP: indent
+#+OPTIONS: \n: t
+
+* General Info
+
+Typst is a markup like typsetting system written in Rust.
+
