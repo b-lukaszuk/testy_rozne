@@ -39,3 +39,16 @@ etc.
 `- Item 2`
 `- Item 3`,
 etc.
+
+** Emphasis
+*** Italics
+
+`_italicized text_`
+
+*** Bold
+
+`*bold text*`
+
+*** Underline
+
+`#underline[underlined_text]`
