@@ -16,3 +16,11 @@ https://typst.app/
 ** Github
 
 https://github.com/typst/typst
+
+* Text formatting
+** Headings
+
+`= H1`
+`== H2`
+`==== H3`
+etc
