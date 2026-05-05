@@ -23,4 +23,19 @@ https://github.com/typst/typst
 `= H1`
 `== H2`
 `==== H3`
-etc
+etc.
+
+** Lists
+*** Numbered
+
+`+ Intem 1`
+`+ Intem 2`
+`+ Intem 3`,
+etc.
+
+*** Bulleted
+
+`- Item 1`
+`- Item 2`
+`- Item 3`,
+etc.
