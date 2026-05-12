@@ -60,7 +60,7 @@ highlighting (useful for code snippets).
 
 *** Examples
 
-For inline code `snippet`
+For inline code `snippet`.
 
 For code block:
 
@@ -71,6 +71,7 @@ fn main() {
 ```
 
 Constructing the element prgrammatically:
+
 #raw("fn " + "main() {}", lang: "rust")
 
 which will give:
