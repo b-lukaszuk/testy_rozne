@@ -21,23 +21,32 @@ https://github.com/typst/typst
 ** Headings
 
 `= H1`
+
 `== H2`
+
 `==== H3`
+
 etc.
 
 ** Lists
 *** Numbered
 
 `+ Intem 1`
+
 `+ Intem 2`
+
 `+ Intem 3`,
+
 etc.
 
 *** Bulleted
 
-`- Item 1`
-`- Item 2`
+`- Item 1`,
+
+`- Item 2`,
+
 `- Item 3`,
+
 etc.
 
 ** Emphasis
@@ -64,16 +73,27 @@ For inline code `snippet`.
 
 For code block:
 
+#+BEGIN_QUOTE
+
 ```rust
 fn main() {
     println!("Hello World!");
 }
 ```
+#+END_QUOTE
 
 Constructing the element prgrammatically:
 
+#+BEGIN_QUOTE
+
 #raw("fn " + "main() {}", lang: "rust")
+
+#+END_QUOTE
 
 which will give:
 
+#+BEGIN_QUOTE
+
 fn main() {}
+
+#+END_QUOTE
