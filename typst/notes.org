@@ -52,3 +52,27 @@ etc.
 *** Underline
 
 `#underline[underlined_text]`
+
+** Raw
+
+You may use raw text with verbatim mono-space font and optional syntax
+highlighting (useful for code snippets).
+
+*** Examples
+
+For inline code `snippet`
+
+For code block:
+
+```rust
+fn main() {
+    println!("Hello World!");
+}
+```
+
+Constructing the element prgrammatically:
+#raw("fn " + "main() {}", lang: "rust")
+
+which will give:
+
+fn main() {}
