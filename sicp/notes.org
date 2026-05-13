@@ -1,0 +1,10 @@
+#+title: SICP
+#+STARTUP: overview
+#+STARTUP: indent
+#+OPTIONS: \n: t
+
+* General Info
+
+Book: Structure and Interpretation of Computer Programs
+
+Authors: Harold Abelson, Gerald Jay Sussman, Julie Sussman
