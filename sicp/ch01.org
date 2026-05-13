@@ -1,0 +1,54 @@
+#+title: Ch01
+#+STARTUP: overview
+#+STARTUP: indent
+#+OPTIONS: \n: t
+
+* Building Abstractions with Procedures
+** 1.1 The Elements of Programming
+
+1. Primitive Expressions
+
+2. Means of Combination
+
+3. Means of Abstraction
+
+*** 1.1.2. Naming and the Environment
+
+#+begin_src
+
+circumference :: Floating a => a -> a
+circumference r = 2 * pi * r
+
+circumference 10
+-- 62.8318
+
+#+end_src
+
+*** 1.1.4 Compound Procedures
+
+#+begin_src
+
+square :: Num a => a -> a
+square x = x * x
+
+square 21
+-- 441
+
+square $ 2 + 5
+-- 49
+
+square $ square 3
+-- 81
+
+#+end_src
+
+#+begin_src
+
+sumOfSquares :: Num a => a -> a -> a
+sumOfSquares x y = square x + square y
+
+sumOfSquares 3 4
+-- 25
+
+#+end_src
+
