@@ -5,6 +5,10 @@
 
 * General Info
 
+Bits (possibly tweaked and modified) from SICP, i.e.:
+
 Book: Structure and Interpretation of Computer Programs
 
 Authors: Harold Abelson, Gerald Jay Sussman, Julie Sussman
+
+Licensed under [Creative Commons Attribution-ShareAlike 4.0. International License](https://creativecommons.org/licenses/by-sa/4.0/deed.en).
