@@ -11,4 +11,4 @@ Book: Real World Haskell
 
 Authors: Bryan O'Sullivan, Don Stewart, John Goerzen
 
-Licensed under [Creative Commons Attribution-Noncommercial 3.0](https://creativecommons.org/licenses/by-nc/3.0/deed.en)
+Licensed under Creative Commons Attribution-Noncommercial 3.0: https://creativecommons.org/licenses/by-nc/3.0/deed.en
