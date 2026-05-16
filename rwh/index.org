@@ -5,8 +5,10 @@
 
 * General Info
 
+Bits (possibly tweaked and modified) from RWH, i.e.:
+
 Book: Real World Haskell
 
-Authors: O'Sullivan B., Stewart D., Goerzen J.
+Authors: Bryan O'Sullivan, Don Stewart, John Goerzen
 
-Licensed under Creative Commons Attribution-Noncommercial 3.0
+Licensed under [Creative Commons Attribution-Noncommercial 3.0](https://creativecommons.org/licenses/by-nc/3.0/deed.en)
