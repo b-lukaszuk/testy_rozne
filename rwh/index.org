@@ -1,0 +1,12 @@
+#+title: RWH
+#+STARTUP: overview
+#+STARTUP: indent
+#+OPTIONS: \n: t
+
+* General Info
+
+Book: Real World Haskell
+
+Authors: O'Sullivan B., Stewart D., Goerzen J.
+
+Licensed under Creative Commons Attribution-Noncommercial 3.0
