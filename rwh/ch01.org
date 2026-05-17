@@ -1,0 +1,27 @@
+#+title: Ch01
+#+STARTUP: overview
+#+STARTUP: indent
+#+OPTIONS: \n: t
+
+* Getting Started
+
+type `:?` at GHCI to list help options/hints.
+
+An arithmetic quirk: writing negative numbers:
+
+#+begin_src
+
+-- works OK
+-3
+
+-- but this one produces an error,
+-- since unary, - operator, cannot be mixed with infix operators
+2 + -3
+
+-- use parenthesis instead
+2 + (-3)
+
+-- or negate function
+2 + negate 3
+
+#+end_src
