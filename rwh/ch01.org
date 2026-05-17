@@ -25,3 +25,55 @@ An arithmetic quirk: writing negative numbers:
 2 + negate 3
 
 #+end_src
+
+Other quirks:
+
+#+begin_src
+
+-- \= instead of !=
+2 \= 3
+
+-- not instead of !
+not True
+
+#+end_src
+
+Info on operators (associativity, precedence, etc.)
+
+#+begin_src
+
+-- :i short for :info
+:i +
+
+-- or
+
+:i (*)
+
+#+end_src
+
+Mathematical constants:
+
+#+begin_src
+
+-- famous pi
+pi
+
+-- but no famous e
+e -- produces error
+
+-- for e use
+exp 1
+
+#+end_src
+
+Exponentiation operators:
+
+#+begin_src
+
+-- ^ to raise to integer power
+2^10
+
+-- ** to raise to float power
+9 ** (0.5) -- equivalent to: sqrt 9
+
+#+end_src
