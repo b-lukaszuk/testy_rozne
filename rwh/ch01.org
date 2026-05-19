@@ -8,6 +8,14 @@
 
 type `:?` at GHCI to list help options/hints.
 
+** Comments
+
+#+begin_src
+
+-- this is a comment
+
+#+end_src
+
 ** arithmetic
 
 Rather standard, but a quirk in writing negative numbers:
@@ -125,4 +133,23 @@ exp 1
 -- [1.0,2.0]
 
 --- [1..] -- infinite range (not to execute on its own)
+#+end_src
+
+** Lists
+
+Lists must be uniform (the same type of all elements)
+
+Operators:
+
+#+begin_src
+
+[1,2] ++ [3, 4] -- concatenation
+-- [1,2,3,4]
+
+3 : [2, 1] -- prepending
+-- [3,2,1]
+
+1 : [] -- prepending
+-- [1]
+
 #+end_src
