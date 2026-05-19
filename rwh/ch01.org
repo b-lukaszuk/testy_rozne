@@ -4,10 +4,13 @@
 #+OPTIONS: \n: t
 
 * Getting Started
+** help
 
 type `:?` at GHCI to list help options/hints.
 
-An arithmetic quirk: writing negative numbers:
+** arithmetic
+
+Rather standard, but a quirk in writing negative numbers:
 
 #+begin_src
 
@@ -26,7 +29,9 @@ An arithmetic quirk: writing negative numbers:
 
 #+end_src
 
-Other quirks:
+** Comparisons
+
+Rather standard, but quirks:
 
 #+begin_src
 
@@ -37,6 +42,8 @@ Other quirks:
 not True
 
 #+end_src
+
+** Info
 
 Info on operators (associativity, precedence, etc.)
 
@@ -50,6 +57,8 @@ Info on operators (associativity, precedence, etc.)
 :i (*)
 
 #+end_src
+
+** Constants
 
 Mathematical constants:
 
@@ -66,7 +75,7 @@ exp 1
 
 #+end_src
 
-Exponentiation operators:
+** Exponentiation
 
 #+begin_src
 
@@ -78,7 +87,7 @@ Exponentiation operators:
 
 #+end_src
 
-Ranges:
+** Ranges
 
 #+begin_src
 
