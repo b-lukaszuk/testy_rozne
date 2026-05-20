@@ -4,7 +4,7 @@
 #+OPTIONS: \n: t
 
 * Getting Started
-** help
+** Help
 
 type `:?` at GHCI to list help options/hints.
 
@@ -16,7 +16,7 @@ type `:?` at GHCI to list help options/hints.
 
 #+end_src
 
-** arithmetic
+** Arithmetic
 
 Rather standard, but a quirk in writing negative numbers:
 
