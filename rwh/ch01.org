@@ -175,3 +175,31 @@ Strings are just lists of characters.
 putStrLn "hello"
 
 #+end_src
+
+** Types
+
+#+begin_src
+
+:set +t -- in GHCI it makes type of an expression to be printed after the expression
+-- 'it' in the output below is a special variable that stores the result of last command/expression
+
+'c'
+-- 'c'
+-- it :: Char
+
+#+end_src
+
+#+begin_src
+
+:unset +t -- revokes ':set +t'
+
+'a'
+-- 'a'
+
+:type 'a' -- gets the type even without ':set +t' option
+-- 'a' :: Char
+
+:t it -- gets the type even without ':set +t' option (shortcut for ':type it')
+-- 'a' :: Char
+
+#+end_src
