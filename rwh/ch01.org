@@ -153,3 +153,25 @@ Operators:
 -- [1]
 
 #+end_src
+
+** Strings
+
+Strings are just lists of characters.
+
+#+begin_src
+
+['h', 'e', 'l', 'l', 'o']
+-- "hello"
+
+"" == []
+-- True
+
+#+end_src
+
+`putStrLn` is an equivalent (kind of) of `print` from other programming languages.
+
+#+begin_src
+
+putStrLn "hello"
+
+#+end_src
