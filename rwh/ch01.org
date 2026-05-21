@@ -203,3 +203,23 @@ putStrLn "hello"
 -- 'a' :: Char
 
 #+end_src
+
+** Simple Program
+
+A program that counts number of lines in text (modifications by me).
+
+#+begin_src
+
+getLinesCount :: String -> String
+getLinesCount txt = show(length(lines txt)) ++ "\n"
+
+main :: IO ()
+main = interact $ getLinesCount
+
+#+end_src
+
+#+begin_src
+
+$ runghc program.hs < test.txt
+
+#+end_src
