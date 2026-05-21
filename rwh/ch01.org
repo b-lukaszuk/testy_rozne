@@ -6,7 +6,7 @@
 * Getting Started
 ** Help
 
-type `:?` at GHCI to list help options/hints.
+type ':?' at GHCI to list help options/hints.
 
 ** Comments
 
@@ -210,16 +210,18 @@ A program that counts number of lines in text (modifications by me).
 
 #+begin_src
 
+-- file textLinesCounter.hs
+
 getLinesCount :: String -> String
 getLinesCount txt = show(length(lines txt)) ++ "\n"
 
 main :: IO ()
-main = interact $ getLinesCount
+main = interact $ getLinesCount -- interact :: (String -> String) -> IO ()
 
 #+end_src
 
 #+begin_src
 
-$ runghc program.hs < test.txt
+$ runghc textLinesCounter.hs < test.txt
 
 #+end_src
