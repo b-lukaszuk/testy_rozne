@@ -4,3 +4,5 @@
 #+OPTIONS: \n: t
 
 * Types and Functions
+
+Haskell's type system is: strong, static and inferred (when needed).
