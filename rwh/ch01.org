@@ -236,7 +236,7 @@ You may modify the program from 'Simple Program' above.
 
 -- file textWordsCounter.hs
 
-getWordsCount :: String -> [Char]
+getWordsCount :: String -> String
 getWordsCount txt = show(length(words txt)) ++ "\n"
 
 main :: IO ()
@@ -258,7 +258,7 @@ Modify the program from 'Exercise 1' above to get the characters count.
 
 -- file textCharsCounter.hs
 
-getCharsCount :: String -> [Char]
+getCharsCount :: String -> String
 getCharsCount txt = show(length txt) ++ "\n"
 
 main :: IO ()
