@@ -249,3 +249,25 @@ main = interact $ getWordsCount
 $ runghc textWordsCounter.hs < test.txt
 
 #+end_src
+
+*** Exercise 2
+
+Modify the program from 'Exercise 1' above to get the characters count.
+
+#+begin_src
+
+-- file textCharsCounter.hs
+
+getCharsCount :: String -> [Char]
+getCharsCount txt = show(length txt) ++ "\n"
+
+main :: IO ()
+main = interact $ getCharsCount
+
+#+end_src
+
+#+begin_src
+
+$ runghc textCharsCounter.hs < test.txt
+
+#+end_src
