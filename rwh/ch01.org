@@ -225,3 +225,27 @@ main = interact $ getLinesCount -- interact :: (String -> String) -> IO ()
 $ runghc textLinesCounter.hs < test.txt
 
 #+end_src
+
+** Exercises
+*** Exercise 1
+
+Use the 'words' function to count the number of words in a string.
+You may modify the program from 'Simple Program' above.
+
+#+begin_src
+
+-- file textWordsCounter.hs
+
+getWordsCount :: String -> [Char]
+getWordsCount txt = show(length(words txt)) ++ "\n"
+
+main :: IO ()
+main = interact $ getWordsCount
+
+#+end_src
+
+#+begin_src
+
+$ runghc textWordsCounter.hs < test.txt
+
+#+end_src
