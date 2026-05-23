@@ -16,3 +16,16 @@ Haskell's type-classes add plasticity to the language's type system.
 
 Thanks to the language type system, we don't need (that many) tests (like in
 dynamic programming languages).
+
+* Some Common Basic Types
+
+'Char' - a Unicode character
+
+'Bool'
+
+'Int' - the Haskell standard only guarantees that it is wider than 28 bits
+(depending on a machine it may be 32-bit or 64-bit wide)
+
+'Integer' - unbounded 'Int'
+
+'Float' and 'Double' - 32-bit and 64-bit float representation
