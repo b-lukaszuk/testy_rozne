@@ -11,3 +11,8 @@ In Haskell there is no implicit type coercion (ergo you must be explicit).
 
 In Haskell the data gets copied instead of being modified in place (so small
 performance penalty).
+
+Haskell's type-classes add plasticity to the language's type system.
+
+Thanks to the language type system, we don't need (that many) tests (like in
+dynamic programming languages).
