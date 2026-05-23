@@ -6,3 +6,8 @@
 * Types and Functions
 
 Haskell's type system is: strong, static and inferred (when needed).
+
+In Haskell there is no implicit type coercion (ergo you must be explicit).
+
+In Haskell the data gets copied instead of being modified in place (so small
+performance penalty).
