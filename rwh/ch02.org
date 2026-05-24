@@ -30,7 +30,7 @@ dynamic programming languages).
 
 'Float' and 'Double' - 32-bit and 64-bit float representation
 
-* Function application
+* Function Application
 
 In Haskell functions are used in prefix notation.
 
@@ -65,7 +65,7 @@ add3 (2 * 6)
 
 #+end_src
 
-* Useful composite data types: lists and tuples
+* Useful Composite Data Types: Lists and Tuples
 
 A composite data type is constructed of other types.
 
@@ -109,3 +109,4 @@ Tuples containing different numbers or types of elements have distinct types.
 -- ('a', False) :: (Char, Bool)
 
 #+end_src
+
