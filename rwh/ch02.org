@@ -29,3 +29,38 @@ dynamic programming languages).
 'Integer' - unbounded 'Int'
 
 'Float' and 'Double' - 32-bit and 64-bit float representation
+
+* Function application
+
+In Haskell functions are used in prefix notation.
+
+#+begin_src
+
+odd 1
+-- True
+
+odd 2
+-- False
+
+even 2
+-- True
+
+#+end_src
+
+Function application got higher precedence than using operators.
+
+#+begin_src
+
+add3 :: Num a => a -> a
+add3 x = x + 3
+
+add3 2 * 6
+-- 30
+
+(add3 2) * 6
+-- 30
+
+add3 (2 * 6)
+-- 15
+
+#+end_src
