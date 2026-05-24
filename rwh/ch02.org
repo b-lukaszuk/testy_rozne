@@ -79,3 +79,33 @@ Lists are "bread and butter" of Haskell collections.
 
 A tuple is a fixed-size collection of values, where each value can have a
 different type.
+
+We write a tuple by enclosing its elements in parenthelis and separating it with
+commas.
+
+#+begin_src
+
+:t ("Do you like Haskell?", True)
+-- ("Do you like Haskell?", True) :: (String, Bool)
+
+()
+-- a tuple of zero elements, also known as "unit"
+-- somewhat similar to C's void
+
+#+end_src
+
+Haskell doesn't have a notion of a one-element tuple.
+
+Tuples containing different numbers or types of elements have distinct types.
+
+#+begin_src
+
+:t (False, 'a')
+-- (False, 'a') :: (Bool, Char)
+
+-- which is different from
+
+:t ('a', False)
+-- ('a', False) :: (Char, Bool)
+
+#+end_src
