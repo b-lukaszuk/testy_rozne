@@ -64,3 +64,18 @@ add3 (2 * 6)
 -- 15
 
 #+end_src
+
+* Useful composite data types: lists and tuples
+
+A composite data type is constructed of other types.
+
+Lists are polymorphic (a list can have any type), but all its elements must be
+of the same type.
+
+A type must start with an uppercase letter (like: 'Bool'), a type variable
+starts with a lowercase letter (like '[a]').
+
+Lists are "bread and butter" of Haskell collections.
+
+A tuple is a fixed-size collection of values, where each value can have a
+different type.
