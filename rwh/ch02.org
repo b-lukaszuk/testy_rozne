@@ -110,3 +110,10 @@ Tuples containing different numbers or types of elements have distinct types.
 
 #+end_src
 
+* Functions Over Lists and Tuples
+
+'take' - takes first 'n' elts of a list (if possible)
+'drop' - drops first 'n' elts of a list (if possible)
+
+'fst' - get first elt of a two-elt tuple
+'snd - get second elt of a two-elt tuple
