@@ -117,3 +117,25 @@ Tuples containing different numbers or types of elements have distinct types.
 
 'fst' - get first elt of a two-elt tuple
 'snd - get second elt of a two-elt tuple
+
+* Function Types and Purity
+
+#+begin_src
+
+:t lines
+-- lines :: String -> [String]
+-- splits a string on line boundaries
+
+lines "London, UK\nParis, France"
+-- ["London, UK","Paris, France"]
+
+#+end_src
+
+In Haskell functions with side effects got 'IO' in their type signature, e.g.
+
+#+begin_src
+
+:t readFile
+-- readFile :: FilePath -> IO String
+
+#+end_src
