@@ -174,3 +174,15 @@ add3 1
 #+end_src
 
 where the result of 'x + 3' (here '4') is returned.
+
+* Variables
+
+A variable is a name to an expression. Once a variable is bound to an
+expression, it cannot be changed (kind of like constants in another languages).
+
+#+begin_src
+
+x = 10
+x = 11 -- will throw an error, cannot assign a value to x twice
+
+#+end_src
