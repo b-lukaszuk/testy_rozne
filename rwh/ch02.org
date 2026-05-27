@@ -139,3 +139,20 @@ In Haskell functions with side effects got 'IO' in their type signature, e.g.
 -- readFile :: FilePath -> IO String
 
 #+end_src
+
+* Source Files
+
+The file names customarily end with '.hs' suffix and are loaded into ghci with
+':load' or ':l' (shortcut) commands.
+
+#+begin_src
+
+:l file.hs
+
+fnFromFileHs arg1 arg2
+-- result of fnFromFileHs
+
+#+end_src
+
+The file to be loaded should be in the current working directory, the command
+':cd /other_dir' changes the current working directory.
