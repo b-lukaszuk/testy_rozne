@@ -156,3 +156,21 @@ fnFromFileHs arg1 arg2
 
 The file to be loaded should be in the current working directory, the command
 ':cd /other_dir' changes the current working directory.
+
+* Return
+
+There is no 'return' keyword in the traditional programming language sense of meaning.
+The existing 'return' keyword is a different beast entirely.
+A function is a single expression whose value is returned, like in
+
+#+begin_src
+
+add3 :: Num a => a -> a
+add3 x = x + 3
+
+add3 1
+-- 4
+
+#+end_src
+
+where the result of 'x + 3' (here '4') is returned.
