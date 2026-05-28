@@ -224,3 +224,21 @@ x = 10
 x = 11 -- will throw an error, cannot assign a value to x twice
 
 #+end_src
+
+* Conditional Evaluation
+
+
+#+begin_src
+
+-- definition, simplistic example
+myDrop :: Int -> [a] -> [a]
+myDrop _ []     = []
+myDrop n xs = if n <= 0 then xs
+              else myDrop (n-1) (tail xs)
+
+#+end_src
+
+Indentation is important, 'if' clause always has 'then' clause end 'else'
+clause. Moreover, it must be type stable (just like a function, and that is why
+'else' clause is obligatory). 'If' always includes 'Bool' statement (no
+truthy/falsy), 'else' may have an 'if' inside (nested 'if'/'else').
