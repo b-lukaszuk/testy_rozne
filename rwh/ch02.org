@@ -113,48 +113,10 @@ Tuples containing different numbers or types of elements have distinct types.
 * Functions Over Lists and Tuples
 
 'take' - takes first 'n' elts of a list (if possible)
-
-#+begin_src
-
--- definition, simplistic example
-myTake :: Int -> [a] -> [a]
-myTake _ []     = []
-myTake 0 _      = []
-myTake n (x:xs) = x : myTake (n-1) xs
-
-#+end_src
-
 'drop' - drops first 'n' elts of a list (if possible)
 
-#+begin_src
-
--- definition, simplistic example
-myDrop :: Int -> [a] -> [a]
-myDrop _ []     = []
-myDrop 0 xs     = xs
-myDrop n (_:xs) = myDrop (n-1) xs
-
-#+end_src
-
 'fst' - get first elt of a two-elt tuple
-
-#+begin_src
-
--- definition, simplistic example
-myFst :: (a, b) -> a
-myFst (x, _) = x
-
-#+end_src
-
 'snd - get second elt of a two-elt tuple
-
-#+begin_src
-
--- definition, simplistic example
-mySnd :: (a, b) -> b
-mySnd (_, y) = y
-
-#+end_src
 
 * Function Types and Purity
 
@@ -242,8 +204,21 @@ clause. Moreover, it must be type stable (just like a function, and that is why
 'else' clause is obligatory). 'If' always includes 'Bool' statement (no
 truthy/falsy), 'else' may have an 'if' inside (nested 'if'/'else').
 
-'null' function checks if the list is empty, '||' is a logical OR. Therefore, we
-can rewrite 'myDrop' to:
+'null' function checks if the list is empty, '||' is a logical OR.
+
+#+begin_src
+
+:t null
+-- null :: Foldable t => t a -> Bool
+-- or to simplify:
+--- null :: [a] -> Bool
+
+:t (||)
+-- (||) :: Bool -> Bool -> Bool
+
+#+end_src
+
+Therefore, we can rewrite 'myDrop' to:
 
 #+begin_src
 
@@ -253,3 +228,5 @@ myDrop n xs = if n <= 0 || null xs
   else myDrop (n-1) (tail xs)
 
 #+end_src
+
+'mDrop' uses recursion -> https://en.wikipedia.org/wiki/Recursion
