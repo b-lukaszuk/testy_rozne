@@ -272,3 +272,19 @@ Type variables in function signature help us to uncover its function, e.g.
 
 The 'a' strongly indicates (one of a few obvious, logical behaviors) that 'fst'
 returns the first element of a pair.
+
+Another example:
+
+#+begin_src
+
+:t take
+-- take :: Int -> [a] -> [a]
+-- which can be rewritten as
+-- take :: Int -> ([a] -> [a])
+
+#+end_src
+
+':: Int -> ([a] -> [a])' is a function that takes one argument ('Int') and
+returns another function (between parenthesis). The other function takes one
+argument (a list, i.e. '[a]') and returns (`->`) a list of the same type
+('[a]').
