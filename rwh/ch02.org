@@ -230,3 +230,9 @@ myDrop n xs = if n <= 0 || null xs
 #+end_src
 
 'mDrop' uses recursion -> https://en.wikipedia.org/wiki/Recursion
+
+* Lazy Evaluation
+
+Lazy evaluation, is a process when the arguments of a function are evaluated
+only when they are absolutely necessary. Before that they are a 'promise'. The
+unevaluated expression is referred to as a 'thunk'.
