@@ -236,3 +236,39 @@ myDrop n xs = if n <= 0 || null xs
 Lazy evaluation, is a process when the arguments of a function are evaluated
 only when they are absolutely necessary. Before that they are a 'promise'. The
 unevaluated expression is referred to as a 'thunk'.
+
+Example (notice '[1..]' is an infinite list):
+
+#+begin_src
+
+True || (length [1..] > 1)
+-- True
+
+#+end_src
+
+* Polymorphism
+
+#+begin_src
+
+:t last
+-- last :: [a] -> a
+
+#+end_src
+
+the 'a' above is a type variable, 'a' could be anything.
+
+However, there is no coercion polymorphysm, e.g. integers and floats are not
+quietly interchanged.
+
+Type variables in function signature help us to uncover its function, e.g.
+
+#+begin_src
+
+:t fst
+-- fst :: (a, b) -> a
+
+#+end_src
+
+
+The 'a' strongly indicates (one of a few obvious, logical behaviors) that 'fst'
+returns the first element of a pair.
