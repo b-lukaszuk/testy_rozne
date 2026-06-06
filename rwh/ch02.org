@@ -302,10 +302,30 @@ lastButOne (x:y:[]) = x
 lastButOne (x:xs)   = lastButOne xs
 lastButOne []       = error "the list must be at least 2 elements long"
 
---- lastButOne [1..5]
+lastButOne [1..5]
 -- 4
 
---- lastButOne [1, 8, 15, 2]
+lastButOne [1, 8, 15, 2]
 -- 15
 
 #+end_src
+
+* The Fuss Over Purity
+
+Thanks to purity we can often get a strong hint of what a pure function do (and
+what it doesn't) based on its name and type signature.
+
+#+begin_src
+
+:t not
+-- not :: Bool -> Bool
+
+#+end_src
+
+Except for errors and totally weird behavior the function 'not' may:
+
+- ignore its input and return 'True' or 'False'
+- return its input unmodified
+- negate its input
+
+The last option is most obvious and happens to be true in this case.
