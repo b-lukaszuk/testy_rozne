@@ -288,3 +288,24 @@ Another example:
 returns another function (between parenthesis). The other function takes one
 argument (a list, i.e. '[a]') and returns (`->`) a list of the same type
 ('[a]').
+
+* Exercises
+
+** Ex 1
+
+Write a function 'lastButOne' that returns the penultimate element of a list.
+
+#+begin_src
+
+lastButOne :: [a] -> a
+lastButOne (x:y:[]) = x
+lastButOne (x:xs)   = lastButOne xs
+lastButOne []       = error "the list must be at least 2 elements long"
+
+--- lastButOne [1..5]
+-- 4
+
+--- lastButOne [1, 8, 15, 2]
+-- 15
+
+#+end_src
