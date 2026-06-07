@@ -27,3 +27,16 @@ Once new type was defined we can inspect it in GHCI
 :t Book 1 "title" ["author 1", "author 2"]
 
 #+end_src
+
+* Type Synonyms
+
+#+begin_src
+
+type CustormerID = Int
+type Name = String
+
+-- which can now be used in
+
+data Customer = Customer CustomerID Name
+
+#+end_src
