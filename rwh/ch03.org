@@ -1,0 +1,8 @@
+#+title: Ch03
+#+STARTUP: overview
+#+STARTUP: indent
+#+OPTIONS: \n: t
+
+* Defining Types, Streamlining Functions
+
+TODO
