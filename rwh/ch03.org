@@ -4,5 +4,26 @@
 #+OPTIONS: \n: t
 
 * Defining Types, Streamlining Functions
+* Defining New Data Type
 
-TODO
+#+begin_src
+
+data BookInfo = Book Int String [String] deriving (Show)
+-- Book iD title authors
+
+#+end_src
+
+'BookInfo' - name of new type (a type constructor)
+'Book' - name of a value constructor
+
+value constructor and type constructor often have the same name
+
+Once new type was defined we can inspect it in GHCI
+
+#+begin_src
+
+:t BookInfo
+-- or
+:t Book 1 "title" ["author 1", "author 2"]
+
+#+end_src
