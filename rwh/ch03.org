@@ -71,3 +71,27 @@ customer = (2, "John Smith")
 #+end_src
 
 The above properties of ADTs help to reduce the number of mistakes in the code.
+
+* Structures
+
+#+begin_src
+
+// c example
+struct book_info {
+    int id;
+    char *title;
+    char **authors;
+}
+
+-- hs equivalent
+data BookInfo = Book Int String [String]
+                deriving (Show)
+
+-- hs equivalent (Record Syntax)
+data BookInfor = Book {
+     id :: Int,
+     title :: String,
+     authors :: [String]
+     } deriving (Show)
+
+#+end_src
