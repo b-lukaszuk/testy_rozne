@@ -50,3 +50,24 @@ data Bool = False | True
 -- it can be either (| - or) one of the value constructors
 
 #+end_src
+
+* ADTs vs Tuples
+
+ADTs allow to distinguish between otherwise identical pieces of information,
+e.g.
+
+#+begin_src
+
+type CustormerID = Int
+type Name = String
+data Customer = Customer CustomerID Name
+
+customer = Customer 2 "John Smith"
+
+-- vs
+
+customer = (2, "John Smith")
+
+#+end_src
+
+The above properties of ADTs help to reduce the number of mistakes in the code.
