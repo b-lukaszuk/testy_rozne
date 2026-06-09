@@ -95,3 +95,17 @@ data BookInfor = Book {
      } deriving (Show)
 
 #+end_src
+
+* Enums
+
+#+begin_src
+
+enum Color = Red | Green | Blue  deriving (Eq, Show)
+
+Red == Green
+-- False
+
+Blue == Blue
+-- True
+
+#+end_src
