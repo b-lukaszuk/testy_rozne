@@ -40,3 +40,13 @@ type Name = String
 data Customer = Customer CustomerID Name
 
 #+end_src
+
+* Algebraic Data Types (ADTs)
+
+#+begin_src
+
+data Bool = False | True
+-- a type with two value constructors
+-- it can be either (| - or) one of the value constructors
+
+#+end_src
