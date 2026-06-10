@@ -109,3 +109,22 @@ Blue == Blue
 -- True
 
 #+end_src
+
+* Pattern Matching
+
+#+begin_src
+
+mySum :: Num a => [a] -> a
+mySum []     = 0
+mySum (x:xs) = x + mySum xs
+
+#+end_src
+
+It works because a list, e.g.
+
+- '[1, 2, 3]' is actually '(1:(2:(3:[])))', so '1' is 'x' and (2:(3:[])) is 'xs'
+- '[1, 2]' is actually '(1:(2:[]))', so '1' is 'x' and '(2:[])' is 'xs'
+- '[1]' is actually '(1:[])', so '1' is 'x' and '[]' is 'xs',
+  etc.
+
+  Patterns are matched in the order from top to bottom.
