@@ -128,3 +128,32 @@ It works because a list, e.g.
   etc.
 
   Patterns are matched in the order from top to bottom.
+
+* Construction and Deconstruction
+
+Construction is when we apply some values to constructor, e.g. 'Just 1.25'.
+
+Deconstruction is when we pattern match against the constructor, e.g in a
+function. The initial value/variable is not destroyed (it's just the name).
+
+#+begin_src
+
+x = Just 1.25
+y = Nothing
+
+extract :: Maybe a -> a -> a
+extract (Just x) _  = x
+extract Nothing def = def
+
+extract x 0.0
+-- 1.25
+
+x
+-- Just 1.25
+
+extract y 0.0
+-- 0.0
+
+y
+-- Nothing
+#+end_src
