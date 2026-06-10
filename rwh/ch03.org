@@ -88,9 +88,9 @@ data BookInfo = Book Int String [String]
                 deriving (Show)
 
 -- hs equivalent (Record Syntax)
-data BookInfor = Book {
-     id :: Int,
-     title :: String,
+data BookInfo = Book {
+     bookId  :: Int,
+     title   :: String,
      authors :: [String]
      } deriving (Show)
 
@@ -177,5 +177,58 @@ exclusive pattern below:
 mySum :: Num a => [a] -> a
 -- mySum []     = 0
 mySum (x:xs) = x + mySum xs
+
+#+end_src
+
+* Record Syntax
+
+Record Syntax looks like:
+
+#+begin_src
+
+data BookInfo = Book {
+     bookId  :: Int,
+     title   :: String,
+     authors :: [String]
+     } deriving (Show)
+
+#+end_src
+
+and allows us to define a struct with two styles, e.g.:
+
+#+begin_src
+
+book1 = Book 1 "title1" ["author1", "author2"]
+
+#+end_src
+
+or
+
+
+#+begin_src
+
+book2 = Book {
+        id = 2,
+        title = "title2",
+        authors = ["author1", "author2"]
+}
+
+#+end_src
+
+The 'field = name' syntax allows for the fields to be in any order. The commas
+may be at end of lines or at beginning of the lines.
+
+With record syntax we get field accessors/getters for free, e.g.:
+
+#+begin_src
+
+:t bookId
+-- bookId :: BookInfo -> Int
+
+bookId book1
+-- 1
+
+bookId book2
+-- 2
 
 #+end_src
