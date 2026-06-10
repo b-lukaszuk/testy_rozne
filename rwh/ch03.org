@@ -157,3 +157,12 @@ extract y 0.0
 y
 -- Nothing
 #+end_src
+
+* Naming in Patterns
+
+'a', 'b' - is common in function signature
+
+'(x:xs)' is common in function body
+
+'_' - wild card pattern is common in function body for the part we don't care
+about
