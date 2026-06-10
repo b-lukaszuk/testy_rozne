@@ -166,3 +166,16 @@ y
 
 '_' - wild card pattern is common in function body for the part we don't care
 about
+
+* Exclusiveness
+
+The patterns should be exclusive or they may be an error, e.g. like in the non
+exclusive pattern below:
+
+#+begin_src
+
+mySum :: Num a => [a] -> a
+-- mySum []     = 0
+mySum (x:xs) = x + mySum xs
+
+#+end_src
