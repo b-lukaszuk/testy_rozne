@@ -232,3 +232,18 @@ bookId book2
 -- 2
 
 #+end_src
+
+* Parameterized Types
+
+Some types are polymorphic, case in point is a list, which elements can be of
+any type. The types themselves can be polymorphic too. For that we use type
+variables in a type declaration, e.g.
+
+#+begin_src
+
+data Maybe a = Just a | Nothing
+
+:t Just 1.5
+-- Just 1.5 :: Fractional a => Maybe a
+
+#+end_src
