@@ -247,3 +247,30 @@ data Maybe a = Just a | Nothing
 -- Just 1.5 :: Fractional a => Maybe a
 
 #+end_src
+
+* Recursive Types
+
+A type is recursive when it is defined in terms of itself, like a list (below Lisp like version)
+
+#+begin_src
+
+data List a = Cons a (List a) | Nil deriving (Show)
+
+x = Cons 0 Nil
+-- or
+x = Cons 1 (Cons 0 Nil)
+-- or
+x = Cons 2 (Cons 1 (Cons 0 Nil))
+--- etc.
+
+#+end_src
+
+or a Tree
+
+#+begin_src
+
+data Tree a = Node a (Tree a) (Tree a) | Empty deriving (Show)
+
+x = Node 2 (Node 1 Empty Empty) (Node 3 Empty Empty)
+
+#+end_src
