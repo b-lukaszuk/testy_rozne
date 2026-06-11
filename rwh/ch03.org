@@ -276,7 +276,6 @@ x = Node 2 (Node 1 Empty Empty) (Node 3 Empty Empty)
 #+end_src
 
 * Exercises
-
 ** Exercise 1
 
 Write a function converting List to list, i.e. 'Cons 1 (Cons 0 Nil)' -> '[1, 0]'
@@ -287,9 +286,10 @@ fromList :: List a -> [a]
 fromList Nil         = []
 fromList (Cons x xs) = x : fromList xs
 
+-- examples
+
 fromList Nil
 -- []
-
 
 fromList (Cons 0 Nil)
 -- [0]
@@ -299,5 +299,31 @@ fromList (Cons 0 (Cons 1 Nil))
 
 fromList (Cons 0 (Cons 1 (Cons 2 Nil)))
 -- [0, 2]
+
+#+end_src
+
+** Exercise 2
+
+Write a function converting list to List, i.e. '[1, 0]' -> 'Cons 1 (Cons 0 Nil)'
+
+#+begin_src
+
+toList :: [a] -> List a
+toList []     = Nil
+toList (x:xs) = Cons x (toList xs)
+
+-- examples
+
+toList []
+-- Nil
+
+toList [1]
+-- Cons 1 Nil
+
+toList [0, 1]
+-- Cons 0 (Cons 1 Nil)
+
+toList [1..5]
+-- Cons 1 (Cons 2 (Cons 3 (Cons 4 (Cons 5 Nil))))
 
 #+end_src
