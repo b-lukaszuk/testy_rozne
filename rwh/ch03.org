@@ -274,3 +274,30 @@ data Tree a = Node a (Tree a) (Tree a) | Empty deriving (Show)
 x = Node 2 (Node 1 Empty Empty) (Node 3 Empty Empty)
 
 #+end_src
+
+* Exercises
+
+** Exercise 1
+
+Write a function converting List to list, i.e. 'Cons 1 (Cons 0 Nil)' -> '[1, 0]'
+
+#+begin_src
+
+fromList :: List a -> [a]
+fromList Nil         = []
+fromList (Cons x xs) = x : fromList xs
+
+fromList Nil
+-- []
+
+
+fromList (Cons 0 Nil)
+-- [0]
+
+fromList (Cons 0 (Cons 1 Nil))
+-- [0, 1]
+
+fromList (Cons 0 (Cons 1 (Cons 2 Nil)))
+-- [0, 2]
+
+#+end_src
