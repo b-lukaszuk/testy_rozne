@@ -327,3 +327,17 @@ toList [1..5]
 -- Cons 1 (Cons 2 (Cons 3 (Cons 4 (Cons 5 Nil))))
 
 #+end_src
+
+* Reporting Errors
+
+There is a standard function 'error :: String -> a' to throw an (unrecoverable)
+error. The result is 'a' so that it can be called anywhere and it always have
+the right type, e.g.
+
+#+begin_src
+
+myHead :: [a] -> a
+myHead (x:xs) = x
+myHead []     = error "no head in an empty list"
+
+#+end_src
