@@ -387,3 +387,32 @@ getBMI 55 162
 -- 20.957171162932475
 
 #+end_src
+
+* Local Functions
+
+The above could be used to introduce local functions.
+
+#+begin_src
+
+getBMIs :: Fractional a => [(a, a)] -> [a]
+getBMIs whs = map getBMI whs
+  where getBMI (w, h) = w / (h/100 * h/100)
+
+getBMIs [(100, 200), (55, 162)]
+-- [25.0, 20.95717116293248]
+
+#+end_src
+
+The same could be done with type declaration for the local function.
+
+#+begin_src
+
+getBMIs :: Fractional a => [(a, a)] -> [a]
+getBMIs whs = map getBMI whs
+  where getBMI :: Fractional a => (a, a) -> a
+        getBMI (w, h) = w / (h/100 * h/100)
+
+getBMIs [(100, 200), (55, 162)]
+-- [25.0, 20.95717116293248]
+
+#+end_src
