@@ -351,3 +351,39 @@ safeHead (x:xs) = Just x
 safeHead []     = Nothing
 
 #+end_src
+
+* Local Variables
+
+You can introduce local variables in a function by using 'let' and 'in' keywords.
+
+#+begin_src
+
+getBMI :: Fractional a => a -> a -> a
+getBMI weightKg heightCm = let heightM = heightCm / 100
+                               bmi = weightKg / (heightM * heightM)
+                           in bmi
+
+getBMI 100 200
+-- 25.0
+
+getBMI 55 162
+-- 20.957171162932475
+
+#+end_src
+
+You can introduce local variables in a function by using 'where' clause.
+
+#+begin_src
+
+getBMI :: Fractional a => a -> a -> a
+getBMI weightKg heightCm = bmi
+  where heightM = heightCm / 100
+        bmi = weightKg / (heightM * heightM)
+
+getBMI 100 200
+-- 25.0
+
+getBMI 55 162
+-- 20.957171162932475
+
+#+end_src
