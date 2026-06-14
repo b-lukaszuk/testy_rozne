@@ -425,3 +425,31 @@ portability. In case of a fixed-width font, tabs stops are placed at different
 intervals on different machines with different OSes. This could read to
 interpretation problems for humans reading the code and even compilation
 problems for compilers.
+
+* The Case Expression
+
+#+begin_src
+
+x = Just 1.25
+y = Nothing
+
+extract :: Maybe a -> a -> a
+extract maybe def =
+  case maybe of
+    Nothing -> def
+    Just x  -> x
+
+extract x 0.0
+-- 1.25
+
+x
+-- Just 1.25
+
+extract y 0.0
+-- 0.0
+
+y
+-- Nothing
+
+#+end_src
+
