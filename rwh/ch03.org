@@ -156,6 +156,7 @@ extract y 0.0
 
 y
 -- Nothing
+
 #+end_src
 
 * Naming in Patterns
@@ -416,3 +417,11 @@ getBMIs [(100, 200), (55, 162)]
 -- [25.0, 20.95717116293248]
 
 #+end_src
+
+* Tabs vs Spaces
+
+In Haskell you should use spaces for your indentation. The reason is
+portability. In case of a fixed-width font, tabs stops are placed at different
+intervals on different machines with different OSes. This could read to
+interpretation problems for humans reading the code and even compilation
+problems for compilers.
