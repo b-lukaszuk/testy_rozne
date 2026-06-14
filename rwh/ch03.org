@@ -453,3 +453,22 @@ y
 
 #+end_src
 
+
+* Conditional Evaluation with Guards
+
+#+begin_src
+
+getBMI :: (Ord a, Fractional a) => a -> a -> Maybe a
+getBMI weightKg heightCm
+  | (weightKg > 0) && (heightCm > 0) = Just bmi
+  | otherwise = Nothing
+  where heightM = heightCm / 100
+        bmi = weightKg / (heightM * heightM)
+
+getBMI 100 200
+-- Just 25.0
+
+getBMI 000 200
+-- Nothing
+
+#+end_src
