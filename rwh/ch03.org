@@ -276,59 +276,6 @@ x = Node 2 (Node 1 Empty Empty) (Node 3 Empty Empty)
 
 #+end_src
 
-* Exercises
-** Exercise 1
-
-Write a function converting List to list, i.e. 'Cons 1 (Cons 0 Nil)' -> '[1, 0]'
-
-#+begin_src
-
-fromList :: List a -> [a]
-fromList Nil         = []
-fromList (Cons x xs) = x : fromList xs
-
--- examples
-
-fromList Nil
--- []
-
-fromList (Cons 0 Nil)
--- [0]
-
-fromList (Cons 0 (Cons 1 Nil))
--- [0, 1]
-
-fromList (Cons 0 (Cons 1 (Cons 2 Nil)))
--- [0, 2]
-
-#+end_src
-
-** Exercise 2
-
-Write a function converting list to List, i.e. '[1, 0]' -> 'Cons 1 (Cons 0 Nil)'
-
-#+begin_src
-
-toList :: [a] -> List a
-toList []     = Nil
-toList (x:xs) = Cons x (toList xs)
-
--- examples
-
-toList []
--- Nil
-
-toList [1]
--- Cons 1 Nil
-
-toList [0, 1]
--- Cons 0 (Cons 1 Nil)
-
-toList [1..5]
--- Cons 1 (Cons 2 (Cons 3 (Cons 4 (Cons 5 Nil))))
-
-#+end_src
-
 * Reporting Errors
 
 There is a standard function 'error :: String -> a' to throw an (unrecoverable)
@@ -470,5 +417,95 @@ getBMI 100 200
 
 getBMI 000 200
 -- Nothing
+
+#+end_src
+
+* Exercises
+** Exercise 1
+
+Write a function converting List to list, i.e. 'Cons 1 (Cons 0 Nil)' -> '[1, 0]'
+
+#+begin_src
+
+fromList :: List a -> [a]
+fromList Nil         = []
+fromList (Cons x xs) = x : fromList xs
+
+-- examples
+
+fromList Nil
+-- []
+
+fromList (Cons 0 Nil)
+-- [0]
+
+fromList (Cons 0 (Cons 1 Nil))
+-- [0, 1]
+
+fromList (Cons 0 (Cons 1 (Cons 2 Nil)))
+-- [0, 2]
+
+#+end_src
+
+** Exercise 2
+
+Write a function converting list to List, i.e. '[1, 0]' -> 'Cons 1 (Cons 0 Nil)'
+
+#+begin_src
+
+toList :: [a] -> List a
+toList []     = Nil
+toList (x:xs) = Cons x (toList xs)
+
+-- examples
+
+toList []
+-- Nil
+
+toList [1]
+-- Cons 1 Nil
+
+toList [0, 1]
+-- Cons 0 (Cons 1 Nil)
+
+toList [1..5]
+-- Cons 1 (Cons 2 (Cons 3 (Cons 4 (Cons 5 Nil))))
+
+#+end_src
+
+** Exercise 3
+
+Write a function that counts elements of a list.
+
+#+begin_src
+
+countElts :: [a] -> Int
+countElts []     = 0
+countElts (x:xs) = 1 + countElts xs
+
+#+end_src
+
+or
+
+#+begin_src
+
+countElts :: [a] -> Int
+countElts xs = countElts' xs 0
+  where
+    countElts' [] acc     = acc
+    countElts' (x:xs) acc = countElts' xs (acc + 1)
+
+#+end_src
+
+or
+
+#+begin_src
+
+countElts' :: [a] -> Int -> Int
+countElts' [] acc     = acc
+countElts' (x:xs) acc = countElts' xs (acc + 1)
+
+countElts :: [a] -> Int
+countElts xs = countElts' xs 0
 
 #+end_src
