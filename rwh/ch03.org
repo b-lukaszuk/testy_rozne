@@ -528,3 +528,20 @@ getAvg [1..10]
 -- 5.5
 
 #+end_src
+
+** Exercise 5
+
+Write a function that turns a list into palindrome, e.g. '[1, 2, 3]' becomes '[1, 2, 3, 3, 2, 1]'
+
+#+begin_src
+
+list2palindrome :: [a] -> [a]
+list2palindrome xs = xs ++ reverse xs
+
+list2palindrome [1..3]
+-- [1,2,3,3,2,1]
+
+list2palindrome ['a'..'d']
+-- "abcddcba"
+
+#+end_src
