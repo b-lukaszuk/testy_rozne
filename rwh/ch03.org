@@ -545,3 +545,19 @@ list2palindrome ['a'..'d']
 -- "abcddcba"
 
 #+end_src
+
+** Exercise 6
+
+Write a function that determines if a list is a palindrome.
+
+#+begin_src
+
+isPalindrome :: Eq a => [a] -> Bool
+isPalindrome xs = xs == reverse xs
+
+isPalindrome (list2palindrome ['a'..'d'])
+-- True
+isPalindrome (init (list2palindrome ['a'..'d']))
+-- False
+
+#+end_src
