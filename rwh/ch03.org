@@ -578,3 +578,22 @@ sortBy compareLengths [[1, 2, 3], [1], [1, 2]]
 - [[1], [1,2], [1,2,3]]
 
 #+end_src
+
+** Exercise 8
+
+Define 'intersperse' function that joins elts of alist with a separator value.
+
+#+begin_src
+
+intersperse :: a -> [a] -> [a]
+intersperse _ []     = []
+intersperse x (y:[]) = [y]
+intersperse x (y:ys) = y : x : intersperse x ys
+
+intersperse ',' ['a'..'f']
+-- "a,b,c,d,e,f"
+
+intersperse 0 [1..5]
+-- [1,0,2,0,3,0,4,0,5]
+
+#+end_src
