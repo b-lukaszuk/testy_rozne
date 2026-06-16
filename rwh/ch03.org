@@ -561,3 +561,20 @@ isPalindrome (init (list2palindrome ['a'..'d']))
 -- False
 
 #+end_src
+
+** Exercise 7
+
+Use 'sortBy' from 'Data.List' to sort a list of lists based on the length of
+each sublist.
+
+#+begin_src
+
+import           Data.List (sortBy)
+
+compareLengths :: [a] -> [b] -> Ordering
+compareLengths xs ys = compare (length xs) (length ys)
+
+sortBy compareLengths [[1, 2, 3], [1], [1, 2]]
+- [[1], [1,2], [1,2,3]]
+
+#+end_src
