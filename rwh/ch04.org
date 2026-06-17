@@ -33,3 +33,18 @@ splitLines cs =
     _                    -> []
 
 #+end_src
+
+* Infix Functions
+
+By default all the functions in Haskell are infix (or prefix) functions.
+To change it use back-ticks, e.g.
+
+#+begin_src
+
+elem 'a' ['a'..'d']
+-- True
+
+'a' `elem` ['a'..'d']
+-- True
+
+#+end_src
