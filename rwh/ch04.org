@@ -48,3 +48,12 @@ elem 'a' ['a'..'d']
 -- True
 
 #+end_src
+
+* Working with Lists
+
+Common and useful functions operating on lists:
+
+- 'length'
+- 'null' (kind of 'isempty' in other programming languages)
+- 'head' and 'last' (returns first and last elt)
+- 'init' and 'tail' (returns all but last, and all but first element)
