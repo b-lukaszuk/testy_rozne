@@ -57,3 +57,8 @@ Common and useful functions operating on lists:
 - 'null' (kind of 'isempty' in other programming languages)
 - 'head' and 'last' (returns first and last elt)
 - 'init' and 'tail' (returns all but last, and all but first element)
+
+* Partial and Total Functions
+
+Functions with only some of its arguments applied are partial function.
+Functions with all arguments applied and clear input-output mapping are total functions.
