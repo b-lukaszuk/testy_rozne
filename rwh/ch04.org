@@ -89,3 +89,30 @@ Functions with all arguments applied and clear input-output mapping are total fu
 -- any :: (a -> Bool) -> [a] -> Bool
 
 #+end_src
+
+* Working with Sublists
+
+#+begin_src
+
+:t take
+-- take :: Int -> [a] -> [a]
+
+:t drop
+-- drop :: Int -> [a] -> [a]
+
+:t splitAt
+-- splitAt :: Int -> [a] -> ([a], [a])
+
+:t takeWhile
+-- takeWhile :: (a -> Bool) -> [a] -> [a]
+
+:t dropWhile
+-- dropWhile :: (a -> Bool) -> [a] -> [a]
+
+:t span
+-- span :: (a -> Bool) -> [a] -> ([a], [a])
+
+:t break
+-- break :: (a -> Bool) -> [a] -> ([a], [a])
+
+#+end_src
