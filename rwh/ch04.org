@@ -62,3 +62,30 @@ Common and useful functions operating on lists:
 
 Functions with only some of its arguments applied are partial function.
 Functions with all arguments applied and clear input-output mapping are total functions.
+
+* Simple List Manipulations
+
+#+begin_src
+
+:t (++)
+-- (++) :: [a] -> [a] -> [a]
+
+:t concat
+-- concat :: [[a]] -> [a]
+
+:t reverse
+-- reverse :: [a] -> [a]
+
+:t and
+-- and :: [Bool] -> Bool
+
+:t or
+-- or :: [Bool] -> Bool
+
+:t all
+-- all :: (a -> Bool) -> [a] -> Bool
+
+:t any
+-- any :: (a -> Bool) -> [a] -> Bool
+
+#+end_src
