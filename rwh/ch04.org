@@ -92,6 +92,8 @@ Functions with all arguments applied and clear input-output mapping are total fu
 
 My implementations for practice:
 
+Version of '++':
+
 #+begin_src
 
 -- (++), PP - plus plus
@@ -104,6 +106,9 @@ myPP "hello, " "world"
 -- "hello, world"
 
 #+end_src
+
+
+Version of 'concat':
 
 #+begin_src
 
@@ -127,6 +132,17 @@ myConcat [[1..3], [], [6..7]]
 -- [1,2,3,6,7]
 
 #+end_src
+
+Version of 'reverse':
+
+#+begin_src
+
+myReverse :: [a] -> [a]
+myReverse []     = []
+myReverse (x:xs) = myReverse xs ++ [x]
+
+#+end_src
+
 
 * Working with Sublists
 
