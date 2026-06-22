@@ -143,6 +143,41 @@ myReverse (x:xs) = myReverse xs ++ [x]
 
 #+end_src
 
+Version of 'and':
+
+#+begin_src
+
+myAnd :: [Bool] -> Bool
+myAnd []         = True
+myAnd (False:xs) = False
+myAnd (True:xs)  = myAnd xs
+
+-- or
+
+myAnd :: [Bool] -> Bool
+myAnd []         = True
+myAnd (False:_) = False
+myAnd (True:xs)  = myAnd xs
+
+#+end_src
+
+Version of 'or':
+
+#+begin_src
+
+myOr :: [Bool] -> Bool
+myOr []         = False
+myOr (False:xs) = myOr xs
+myOr (True:xs)  = True
+
+-- or
+
+myOr :: [Bool] -> Bool
+myOr []         = False
+myOr (False:xs) = myOr xs
+myOr (True:_)  = True
+
+#+end_src
 
 * Working with Sublists
 
