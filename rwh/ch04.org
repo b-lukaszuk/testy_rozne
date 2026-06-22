@@ -179,6 +179,25 @@ myOr (True:_)  = True
 
 #+end_src
 
+Version of 'all':
+
+#+begin_src
+
+myAll :: (a -> Bool) -> [a] -> Bool
+myAll _ []     = True
+myAll f (x:xs) = if f x
+  then myAll f xs
+  else False
+
+myAll odd []
+-- True
+myAll odd [1,3..21]
+-- True
+myAll odd ([1,3..21] ++ [10])
+-- False
+
+#+end_src
+
 * Working with Sublists
 
 #+begin_src
