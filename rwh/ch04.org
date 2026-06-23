@@ -243,3 +243,21 @@ myAny odd ([2,4..100] ++ [1])
 -- break :: (a -> Bool) -> [a] -> ([a], [a])
 
 #+end_src
+
+My implementations for practice:
+
+Version of 'take':
+
+#+begin_src
+
+myTake :: Int -> [a] -> [a]
+myTake 0 _      = []
+myTake n (x:xs) = x : myTake (n-1) xs
+
+-- or more robust
+
+myTake :: Int -> [a] -> [a]
+myTake n (x:xs) | n <= 0 = []
+                | otherwise = x : myTake (n-1) xs
+
+#+end_src
