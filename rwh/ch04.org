@@ -277,3 +277,15 @@ myDrop n (x:xs)     | n <= 0 = x : xs
                     | otherwise = myDrop (n-1) xs
 
 #+end_src
+
+Version of 'splitAt':
+
+#+begin_src
+
+mySplitAt :: Int -> [a] -> ([a], [a])
+mySplitAt n xs = ((take n xs), (drop n xs))
+
+mySplitAt 5 "hellothere"
+-- ("hello","there")
+
+#+end_src
