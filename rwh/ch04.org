@@ -261,3 +261,19 @@ myTake n (x:xs) | n <= 0 = []
                 | otherwise = x : myTake (n-1) xs
 
 #+end_src
+
+Version of 'drop':
+
+#+begin_src
+
+myDrop :: Int -> [a] -> [a]
+myDrop 0 xs     = xs
+myDrop n (x:xs) = myDrop (n-1) xs
+
+-- or more robust
+
+myDrop :: Int -> [a] -> [a]
+myDrop n (x:xs)     | n <= 0 = x : xs
+                    | otherwise = myDrop (n-1) xs
+
+#+end_src
