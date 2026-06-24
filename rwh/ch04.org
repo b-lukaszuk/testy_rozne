@@ -4,7 +4,7 @@
 #+OPTIONS: \n: t
 
 * Functional Programming
-* Universal Split Lines
+** Universal Split Lines
 
 Below a universal 'splitLines' that should act cross platforms regardless of
 the type of line terminators ('\n' vs. '\r\n'). Notice that the built-in 'lines'
@@ -34,7 +34,7 @@ splitLines cs =
 
 #+end_src
 
-* Infix Functions
+** Infix Functions
 
 By default all the functions in Haskell are infix (or prefix) functions.
 To change it use back-ticks, e.g.
@@ -49,7 +49,7 @@ elem 'a' ['a'..'d']
 
 #+end_src
 
-* Working with Lists
+** Working with Lists
 
 Common and useful functions operating on lists:
 
@@ -58,12 +58,12 @@ Common and useful functions operating on lists:
 - 'head' and 'last' (returns first and last elt)
 - 'init' and 'tail' (returns all but last, and all but first element)
 
-* Partial and Total Functions
+** Partial and Total Functions
 
 Functions with only some of its arguments applied are partial function.
 Functions with all arguments applied and clear input-output mapping are total functions.
 
-* Simple List Manipulations
+** Simple List Manipulations
 
 #+begin_src
 
@@ -217,7 +217,7 @@ myAny odd ([2,4..100] ++ [1])
 
 #+end_src
 
-* Working with Sublists
+** Working with Sublists
 
 #+begin_src
 
