@@ -4,7 +4,7 @@
 #+OPTIONS: \n: t
 
 * Defining Types, Streamlining Functions
-* Defining New Data Type
+** Defining New Data Type
 
 #+begin_src
 
@@ -28,7 +28,7 @@ Once new type was defined we can inspect it in GHCI
 
 #+end_src
 
-* Type Synonyms
+** Type Synonyms
 
 #+begin_src
 
@@ -41,7 +41,7 @@ data Customer = Customer CustomerID Name
 
 #+end_src
 
-* Algebraic Data Types (ADTs)
+** Algebraic Data Types (ADTs)
 
 #+begin_src
 
@@ -51,7 +51,7 @@ data Bool = False | True
 
 #+end_src
 
-* ADTs vs Tuples
+** ADTs vs Tuples
 
 ADTs allow to distinguish between otherwise identical pieces of information,
 e.g.
@@ -72,7 +72,7 @@ customer = (2, "John Smith")
 
 The above properties of ADTs help to reduce the number of mistakes in the code.
 
-* Structures
+** Structures
 
 #+begin_src
 
@@ -96,7 +96,7 @@ data BookInfo = Book {
 
 #+end_src
 
-* Enums
+** Enums
 
 #+begin_src
 
@@ -110,7 +110,7 @@ Blue == Blue
 
 #+end_src
 
-* Pattern Matching
+** Pattern Matching
 
 #+begin_src
 
@@ -129,7 +129,7 @@ It works because a list, e.g.
 
   Patterns are matched in the order from top to bottom.
 
-* Construction and Deconstruction
+** Construction and Deconstruction
 
 Construction is when we apply some values to constructor, e.g. 'Just 1.25'.
 
@@ -159,7 +159,7 @@ y
 
 #+end_src
 
-* Naming in Patterns
+** Naming in Patterns
 
 'a', 'b' - is common in function signature
 
@@ -168,7 +168,7 @@ y
 '_' - wild card pattern is common in function body for the part we don't care
 about
 
-* Exclusiveness
+** Exclusiveness
 
 The patterns should be exclusive or they may be an error, e.g. like in the non
 exclusive pattern below:
@@ -181,7 +181,7 @@ mySum (x:xs) = x + mySum xs
 
 #+end_src
 
-* Record Syntax
+** Record Syntax
 
 Record Syntax looks like:
 
@@ -234,7 +234,7 @@ bookId book2
 
 #+end_src
 
-* Parameterized Types
+** Parameterized Types
 
 Some types are polymorphic, case in point is a list, which elements can be of
 any type. The types themselves can be polymorphic too. For that we use type
@@ -249,7 +249,7 @@ data Maybe a = Just a | Nothing
 
 #+end_src
 
-* Recursive Types
+** Recursive Types
 
 A type is recursive when it is defined in terms of itself, like a list (below Lisp like version)
 
@@ -276,7 +276,7 @@ x = Node 2 (Node 1 Empty Empty) (Node 3 Empty Empty)
 
 #+end_src
 
-* Reporting Errors
+** Reporting Errors
 
 There is a standard function 'error :: String -> a' to throw an (unrecoverable)
 error. The result is 'a' so that it can be called anywhere and it always have
@@ -290,7 +290,7 @@ myHead []     = error "no head in an empty list"
 
 #+end_src
 
-* Error Alternative
+** Error Alternative
 
 #+begin_src
 
@@ -300,7 +300,7 @@ safeHead []     = Nothing
 
 #+end_src
 
-* Local Variables
+** Local Variables
 
 You can introduce local variables in a function by using 'let' and 'in' keywords.
 
@@ -336,7 +336,7 @@ getBMI 55 162
 
 #+end_src
 
-* Local Functions
+** Local Functions
 
 The above could be used to introduce local functions.
 
@@ -365,7 +365,7 @@ getBMIs [(100, 200), (55, 162)]
 
 #+end_src
 
-* Tabs vs Spaces
+** Tabs vs Spaces
 
 In Haskell you should use spaces for your indentation. The reason is
 portability. In case of a fixed-width font, tabs stops are placed at different
@@ -373,7 +373,7 @@ intervals on different machines with different OSes. This could read to
 interpretation problems for humans reading the code and even compilation
 problems for compilers.
 
-* The Case Expression
+** The Case Expression
 
 #+begin_src
 
@@ -400,7 +400,7 @@ y
 
 #+end_src
 
-* Conditional Evaluation with Guards
+** Conditional Evaluation with Guards
 
 #+begin_src
 
@@ -419,8 +419,8 @@ getBMI 000 200
 
 #+end_src
 
-* Exercises
-** Exercise 1
+** Exercises
+*** Exercise 1
 
 Write a function converting List to list, i.e. 'Cons 1 (Cons 0 Nil)' -> '[1, 0]'
 
@@ -446,7 +446,7 @@ fromList (Cons 0 (Cons 1 (Cons 2 Nil)))
 
 #+end_src
 
-** Exercise 2
+*** Exercise 2
 
 Write a function converting list to List, i.e. '[1, 0]' -> 'Cons 1 (Cons 0 Nil)'
 
@@ -472,7 +472,7 @@ toList [1..5]
 
 #+end_src
 
-** Exercise 3
+*** Exercise 3
 
 Write a function that counts elements of a list.
 
@@ -509,7 +509,7 @@ countElts xs = countElts' xs 0
 
 #+end_src
 
-** Exercise 4
+*** Exercise 4
 
 Write a function that computes the mean of a list.
 
@@ -529,7 +529,7 @@ getAvg [1..10]
 
 #+end_src
 
-** Exercise 5
+*** Exercise 5
 
 Write a function that turns a list into palindrome, e.g. '[1, 2, 3]' becomes '[1, 2, 3, 3, 2, 1]'
 
@@ -546,7 +546,7 @@ list2palindrome ['a'..'d']
 
 #+end_src
 
-** Exercise 6
+*** Exercise 6
 
 Write a function that determines if a list is a palindrome.
 
@@ -562,7 +562,7 @@ isPalindrome (init (list2palindrome ['a'..'d']))
 
 #+end_src
 
-** Exercise 7
+*** Exercise 7
 
 Use 'sortBy' from 'Data.List' to sort a list of lists based on the length of
 each sublist.
@@ -579,7 +579,7 @@ sortBy compareLengths [[1, 2, 3], [1], [1, 2]]
 
 #+end_src
 
-** Exercise 8
+*** Exercise 8
 
 Define 'intersperse' function that joins elts of alist with a separator value.
 
