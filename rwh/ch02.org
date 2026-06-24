@@ -17,7 +17,7 @@ Haskell's type-classes add plasticity to the language's type system.
 Thanks to the language type system, we don't need (that many) tests (like in
 dynamic programming languages).
 
-* Some Common Basic Types
+** Some Common Basic Types
 
 'Char' - a Unicode character
 
@@ -30,7 +30,7 @@ dynamic programming languages).
 
 'Float' and 'Double' - 32-bit and 64-bit float representation
 
-* Function Application
+** Function Application
 
 In Haskell functions are used in prefix notation.
 
@@ -65,7 +65,7 @@ add3 (2 * 6)
 
 #+end_src
 
-* Useful Composite Data Types: Lists and Tuples
+** Useful Composite Data Types: Lists and Tuples
 
 A composite data type is constructed of other types.
 
@@ -110,7 +110,7 @@ Tuples containing different numbers or types of elements have distinct types.
 
 #+end_src
 
-* Functions Over Lists and Tuples
+** Functions Over Lists and Tuples
 
 'take' - takes first 'n' elts of a list (if possible)
 'drop' - drops first 'n' elts of a list (if possible)
@@ -118,7 +118,7 @@ Tuples containing different numbers or types of elements have distinct types.
 'fst' - get first elt of a two-elt tuple
 'snd - get second elt of a two-elt tuple
 
-* Function Types and Purity
+** Function Types and Purity
 
 #+begin_src
 
@@ -140,7 +140,7 @@ In Haskell functions with side effects got 'IO' in their type signature, e.g.
 
 #+end_src
 
-* Source Files
+** Source Files
 
 The file names customarily end with '.hs' suffix and are loaded into ghci with
 ':load' or ':l' (shortcut) commands.
@@ -157,7 +157,7 @@ fnFromFileHs arg1 arg2
 The file to be loaded should be in the current working directory, the command
 ':cd /other_dir' changes the current working directory.
 
-* Return
+** Return
 
 There is no 'return' keyword in the traditional programming language sense of meaning.
 The existing 'return' keyword is a different beast entirely.
@@ -175,7 +175,7 @@ add3 1
 
 where the result of 'x + 3' (here '4') is returned.
 
-* Variables
+** Variables
 
 A variable is a name to an expression. Once a variable is bound to an
 expression, it cannot be changed (kind of like constants in another languages).
@@ -187,7 +187,7 @@ x = 11 -- will throw an error, cannot assign a value to x twice
 
 #+end_src
 
-* Conditional Evaluation
+** Conditional Evaluation
 
 
 #+begin_src
@@ -231,7 +231,7 @@ myDrop n xs = if n <= 0 || null xs
 
 'mDrop' uses recursion -> https://en.wikipedia.org/wiki/Recursion
 
-* Lazy Evaluation
+** Lazy Evaluation
 
 Lazy evaluation, is a process when the arguments of a function are evaluated
 only when they are absolutely necessary. Before that they are a 'promise'. The
@@ -246,7 +246,7 @@ True || (length [1..] > 1)
 
 #+end_src
 
-* Polymorphism
+** Polymorphism
 
 #+begin_src
 
@@ -289,9 +289,8 @@ returns another function (between parenthesis). The other function takes one
 argument (a list, i.e. '[a]') and returns (`->`) a list of the same type
 ('[a]').
 
-* Exercises
-
-** Ex 1
+** Exercises
+*** Ex 1
 
 Write a function 'lastButOne' that returns the penultimate element of a list.
 
@@ -310,7 +309,7 @@ lastButOne [1, 8, 15, 2]
 
 #+end_src
 
-* The Fuss Over Purity
+** The Fuss Over Purity
 
 Thanks to purity we can often get a strong hint of what a pure function do (and
 what it doesn't) based on its name and type signature.
