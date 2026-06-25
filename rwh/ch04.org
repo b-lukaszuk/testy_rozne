@@ -315,3 +315,24 @@ myTakeWhile odd [1, 3, 4, 5]
 -- [1,3]
 
 #+end_src
+
+Version of 'span':
+
+#+begin_src
+
+mySpan' :: (a -> Bool) -> [a] -> ([a], [a]) -> ([a], [a])
+mySpan' _ [] acc     = acc
+mySpan' pred (x:xs) (ys, zs)
+  | pred x = mySpan' pred xs (x:ys, zs)
+  | otherwise = (reverse ys, x:xs ++ zs)
+
+mySpan :: (a -> Bool) -> [a] -> ([a], [a])
+mySpan pred xs = mySpan' pred xs ([], [])
+
+mySpan even [2,4,9,10,11]
+-- ([2,4], [9,10,11])
+
+mySpan even [1, 2,4, 10,11]
+([], [1,2,4,10,11])
+
+#+end_src
