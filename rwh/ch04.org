@@ -366,13 +366,13 @@ myBreak even [1,3..9]
 #+begin_src
 
 :t elem
-elem :: (Eq a) => a -> [a] -> Bool
+-- elem :: (Eq a) => a -> [a] -> Bool
 
 :t notElem
-notElem :: (Eq a) => a -> [a] -> Bool
+-- notElem :: (Eq a) => a -> [a] -> Bool
 
 :t filter
-filter :: (a -> Bool) -> [a] -> [a]
+-- filter :: (a -> Bool) -> [a] -> [a]
 
 #+end_src
 
