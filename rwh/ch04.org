@@ -375,3 +375,17 @@ notElem :: (Eq a) => a -> [a] -> Bool
 filter :: (a -> Bool) -> [a] -> [a]
 
 #+end_src
+
+My implementations for practice:
+
+Version of 'elem':
+
+#+begin_src
+
+myElem :: (Eq a) => a -> [a] -> Bool
+myElem _ [] = False
+myElem x (y:ys)
+  | x == y = True
+  | otherwise = myElem x ys
+
+#+end_src
