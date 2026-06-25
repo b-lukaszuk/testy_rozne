@@ -336,3 +336,27 @@ mySpan even [1, 2,4, 10,11]
 ([], [1,2,4,10,11])
 
 #+end_src
+
+Version of 'break':
+
+#+begin_src
+
+myBreak' :: (a -> Bool) -> [a] -> ([a], [a]) -> ([a], [a])
+myBreak' _ [] acc     = acc
+myBreak' pred (x:xs) (ys, zs)
+  | pred x = (reverse ys, x:xs ++ zs)
+  | otherwise = myBreak' pred xs (x:ys, zs)
+
+myBreak :: (a -> Bool) -> [a] -> ([a], [a])
+myBreak pred xs = myBreak' pred xs ([], [])
+
+myBreak even [1,3,4,6,7,8]
+-- ([1,3], [4,6,7,8])
+
+myBreak odd [1,3,4,6,7,8]
+-- ([], [1,3,4,6,7,8])
+
+myBreak even [1,3..9]
+--- ([9,7,5,3,1],[])
+
+#+end_src
