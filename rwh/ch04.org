@@ -401,3 +401,15 @@ myNotElem x (y:ys)
   | otherwise = myNotElem x ys
 
 #+end_src
+
+Version of 'filter':
+
+#+begin_src
+
+myFilter :: (a -> Bool) -> [a] -> [a]
+myFilter _ [] = []
+myFilter pred (x:xs)
+  | pred x = x : myFilter pred xs
+  | otherwise = myFilter pred xs
+
+#+end_src
