@@ -413,3 +413,20 @@ myFilter pred (x:xs)
   | otherwise = myFilter pred xs
 
 #+end_src
+
+Other useful fns working on lists.
+
+#+begin_src
+
+:module +Data.List
+
+:t isPrefixOf
+-- isPrefixOf :: Eq a => [a] -> [a] -> Bool
+
+:t isInfixOf
+-- isInfixOf :: Eq a => [a] -> [a] -> Bool
+
+:t isSuffixOf
+-- isSuffixOf :: Eq a => [a] -> [a] -> Bool
+
+#+end_src
