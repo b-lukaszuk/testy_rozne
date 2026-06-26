@@ -389,3 +389,15 @@ myElem x (y:ys)
   | otherwise = myElem x ys
 
 #+end_src
+
+Version of 'notElem':
+
+#+begin_src
+
+myNotElem :: (Eq a) => a -> [a] -> Bool
+myNotElem _ [] = True
+myNotElem x (y:ys)
+  | x == y = False
+  | otherwise = myNotElem x ys
+
+#+end_src
