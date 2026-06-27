@@ -466,3 +466,12 @@ map (isInfixOf "la") ["", "axxlxa", "trela", "trala", "lana"]
 [False,False,True,True,True]
 
 #+end_src
+
+Version of 'isSuffixOf':
+
+#+begin_src
+
+myIsSuffixOf :: Eq a => [a] -> [a] -> Bool
+myIsSuffixOf xs ys = myIsPrefixOf (reverse xs) (reverse ys)
+
+#+end_src
