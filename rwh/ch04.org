@@ -435,11 +435,34 @@ Version of 'isPrefixOf':
 
 #+begin_src
 
-myIsPrefixOf :: (Eq a) => [a] -> [a] -> Bool
+myIsPrefixOf :: Eq a => [a] -> [a] -> Bool
 myIsPrefixOf [] _ = True
 myIsPrefixOf _ [] = False
 myIsPrefixOf (x:xs) (y:ys)
   | x == y = myIsPrefixOf xs ys
   | otherwise = False
+
+#+end_src
+
+Version of 'isInfixOf':
+
+#+begin_src
+
+myIsInfixOf :: Eq a => [a] -> [a] -> Bool
+myIsInfixOf xs ys = myIsInfixOf' xs ys False
+
+myIsInfixOf' :: Eq a => [a] -> [a] -> Bool -> Bool
+myIsInfixOf' [] _ _ = True
+myIsInfixOf' _ [] prevCharMatch = prevCharMatch
+myIsInfixOf' (x:xs) (y:ys) prevCharMatch
+  | x == y = myIsInfixOf' xs ys True
+  | x /= y && prevCharMatch = False
+  | otherwise = myIsInfixOf' (x:xs) ys False
+
+map (isInfixOf "la") ["", "axxlxa", "trela", "trala", "lana"]
+-- [False,False,True,True,True]
+
+-- map (myIsInfixOf "la") ["", "axxlxa", "trela", "trala", "lana"]
+[False,False,True,True,True]
 
 #+end_src
