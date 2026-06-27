@@ -430,3 +430,16 @@ Other useful fns working on lists.
 -- isSuffixOf :: Eq a => [a] -> [a] -> Bool
 
 #+end_src
+
+Version of 'isPrefixOf':
+
+#+begin_src
+
+myIsPrefixOf :: (Eq a) => [a] -> [a] -> Bool
+myIsPrefixOf [] _ = True
+myIsPrefixOf _ [] = False
+myIsPrefixOf (x:xs) (y:ys)
+  | x == y = myIsPrefixOf xs ys
+  | otherwise = False
+
+#+end_src
