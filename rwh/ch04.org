@@ -459,6 +459,11 @@ myIsInfixOf' (x:xs) (y:ys) prevCharMatch
 myIsInfixOf :: Eq a => [a] -> [a] -> Bool
 myIsInfixOf xs ys = myIsInfixOf' xs ys False
 
+-- or
+myIsInfixOf :: Eq a => [a] -> [a] -> Bool
+myIsInfixOf xs [] = myIsPrefixOf xs []
+myIsInfixOf xs ys = (myIsPrefixOf xs ys) || myIsInfixOf xs (tail ys)
+
 map (isInfixOf "la") ["", "axxlxa", "trela", "trala", "lana"]
 -- [False,False,True,True,True]
 
