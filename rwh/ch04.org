@@ -480,3 +480,17 @@ myIsSuffixOf :: Eq a => [a] -> [a] -> Bool
 myIsSuffixOf xs ys = myIsPrefixOf (reverse xs) (reverse ys)
 
 #+end_src
+
+** Working with Sevelar Lists
+
+This is to be done with:
+
+#+begin_src
+
+:t zip
+-- zip :: [a] -> [b] -> [(a, b)]
+
+:t zipWith
+-- zipWith :: (a -> b -> c) -> [a] -> [b] -> [c]
+
+#+end_src
