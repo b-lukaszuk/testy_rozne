@@ -542,3 +542,18 @@ myZipWith (+) [1..9] [10,20..]
 -- unwords :: [String] -> String
 
 #+end_src
+
+** Exercises
+*** Exercise 1
+
+Write 'safe' versions of the following functions: 'head', 'tail', 'last',
+'init'. The functions signatures are:
+
+#+begin_src
+
+safeHead :: [a] -> Maybe a
+safeTail :: [a] -> Maybe [a]
+safeLast :: [a] -> Maybe a
+safeInit :: [a] -> Maybe [a]
+
+#+end_src>
