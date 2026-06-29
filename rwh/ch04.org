@@ -524,3 +524,21 @@ myZipWith (+) [1..9] [10,20..]
 -- [11,22,33,44,55,66,77,88,99]
 
 #+end_src
+
+** Special String Functions
+
+#+begin_src
+
+:t lines
+-- lines :: String -> [String]
+
+:t unlines
+-- unlines :: [String] -> String
+
+:t words
+-- words :: String -> [String]
+
+:t unwords
+-- unwords :: [String] -> String
+
+#+end_src
