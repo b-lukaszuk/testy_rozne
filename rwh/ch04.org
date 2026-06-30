@@ -580,3 +580,11 @@ safeLast [x]    = Just x
 safeLast (x:xs) = safeLast xs
 
 #+end_src>
+
+#+begin_src
+
+safeInit :: [a] -> Maybe [a]
+safeInit []     = Nothing
+safeInit (x:xs) = Just xs
+
+#+end_src>
