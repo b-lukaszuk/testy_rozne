@@ -571,3 +571,12 @@ safeTail (_:xs) = Just xs
 -- or: safeTail (x:xs) = Just xs
 
 #+end_src>
+
+#+begin_src
+
+safeLast :: [a] -> Maybe a
+safeLast []     = Nothing
+safeLast [x]    = Just x
+safeLast (x:xs) = safeLast xs
+
+#+end_src>
