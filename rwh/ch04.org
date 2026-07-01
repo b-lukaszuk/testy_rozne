@@ -630,3 +630,8 @@ words "ala \tma   kota\na tomek psa"
 -- ["ala","ma","kota","a","tomek","psa"]
 
 #+end_src
+
+*** Exercise 3
+
+Use the framework from the previous snippets to write a program that prints the
+first word of each line of its input.
