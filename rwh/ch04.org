@@ -588,3 +588,13 @@ safeInit []     = Nothing
 safeInit (x:xs) = Just xs
 
 #+end_src>
+
+*** Exercise 2
+
+Write a function 'splitWith' that acts similarly to 'words', and has a following signature.
+
+#+begin_src
+
+splitWith :: (a -> Bool) -> [a] -> [[a]]
+
+#+end_src
