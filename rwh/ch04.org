@@ -598,3 +598,35 @@ Write a function 'splitWith' that acts similarly to 'words', and has a following
 splitWith :: (a -> Bool) -> [a] -> [[a]]
 
 #+end_src
+
+Exemplary solution:
+
+#+begin_src
+
+splitWith' :: (a -> Bool) -> [a] -> [a] -> [[a]]
+splitWith' _ [] acc = (reverse acc) : []
+splitWith' pred (x:xs) acc
+  | pred x =
+    if null acc then splitWith' pred xs []
+    else (reverse acc) : (splitWith' pred xs [])
+  | otherwise = splitWith' pred xs (x : acc)
+
+splitWith :: (a -> Bool) -> [a] -> [[a]]
+splitWith pred xs = splitWith' pred xs []
+
+splitWith (== ' ') "ala ma   kota"
+-- ["ala","ma","kota"]
+
+words "ala ma   kota"
+-- ["ala","ma","kota"]
+
+isBreak :: Char -> Bool
+isBreak x = x == ' ' || x == '\n' || x == '\t'
+
+splitWith isBreak "ala \tma   kota\na tomek psa"
+-- ["ala","ma","kota","a","tomek","psa"]
+
+words "ala \tma   kota\na tomek psa"
+-- ["ala","ma","kota","a","tomek","psa"]
+
+#+end_src
