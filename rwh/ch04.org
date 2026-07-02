@@ -654,3 +654,21 @@ main = do
 
 #+end_src
 
+#+begin_src
+
+-- in shell
+ghc printFirstWordOfEachLine.hs
+
+-- and
+./printFirstWordOfEachLine < test.txt
+
+#+end_src
+
+or
+
+#+begin_src
+
+-- in shell
+runghc printFirstWordOfEachLine.hs < test.txt
+
+#+end_src
