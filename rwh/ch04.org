@@ -682,4 +682,16 @@ Write a program that transpose the text in a file, e.g.
 transpose "hello\nworld\n"
 -- "hw\neo\nlr\nll\nod\n"
 
+-- or
+transpose "hello\nworld\n"
+-- hw
+-- eo
+-- lr
+-- ll
+-- od
+
 #+end_src
+
+My note: the task description is not clear. For instance, it is unknown what
+should be done if the lines are of different length. So, I'll just do whatever
+comes to my mind and/or will be convenient to me.
