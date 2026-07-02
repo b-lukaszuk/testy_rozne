@@ -635,3 +635,22 @@ words "ala \tma   kota\na tomek psa"
 
 Use the framework from the previous snippets to write a program that prints the
 first word of each line of its input.
+
+#+begin_src
+
+-- printFirstWordOfEachLine.hs
+getFirstWord :: String -> String
+getFirstWord lineOfTxt = head (words lineOfTxt)
+
+getFirstWords :: String -> [String]
+getFirstWords input = map getFirstWord (lines input)
+
+handleInput :: String -> String
+handleInput input = unlines (getFirstWords input)
+
+main :: IO ()
+main = do
+  interact handleInput
+
+#+end_src
+
