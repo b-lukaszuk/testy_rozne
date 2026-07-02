@@ -672,3 +672,14 @@ or
 runghc printFirstWordOfEachLine.hs < test.txt
 
 #+end_src
+
+*** Exercise 4
+
+Write a program that transpose the text in a file, e.g.
+
+#+begin_src
+
+transpose "hello\nworld\n"
+-- "hw\neo\nlr\nll\nod\n"
+
+#+end_src
