@@ -733,3 +733,36 @@ or
 runghc transposeLines.hs < test.txt
 
 #+end_src
+
+** Loops. Explicit Recursion
+
+#+begin_src
+
+// C
+int as_int(char *str) {
+    int acc;
+
+    for (acc = 0; isdigit(*str); str++) {
+        acc = acc * 10 + (*str - '0');
+    }
+    return acc;
+}
+
+#+end_src
+
+
+#+begin_src
+
+-- hs
+
+import           Data.Char (digitToInt)
+
+loop :: Int -> String -> Int
+loop acc [] = acc
+loop acc (x:xs) = loop updatedAcc xs
+  where updatedAcc = acc * 10 + digitToInt x
+
+asInt :: String -> Int
+asInt xs = loop 0 xs
+
+#+end_src
