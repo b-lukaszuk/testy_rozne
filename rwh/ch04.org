@@ -695,3 +695,14 @@ transpose "hello\nworld\n"
 My note: the task description is not clear. For instance, it is unknown what
 should be done if the lines are of different length. So, I'll just do whatever
 comes to my mind and/or will be convenient to me.
+
+#+begin_src
+
+-- transposeLines.hs
+transposeLines :: [String] -> [String]
+transposeLines xs -- xs are lines of text
+  | any null xs = []
+  | otherwise = (map head xs) : transposeLines (map tail xs)
+
+#+end_src
+
