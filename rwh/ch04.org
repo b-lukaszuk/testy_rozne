@@ -638,7 +638,8 @@ first word of each line of its input.
 
 #+begin_src
 
--- printFirstWordOfEachLine.hs
+-- file: printFirstWordOfEachLine.hs
+
 getFirstWord :: String -> String
 getFirstWord lineOfTxt = head (words lineOfTxt)
 
@@ -698,11 +699,37 @@ comes to my mind and/or will be convenient to me.
 
 #+begin_src
 
--- transposeLines.hs
+-- file: transposeLines.hs
+
 transposeLines :: [String] -> [String]
 transposeLines xs -- xs are lines of text
   | any null xs = []
   | otherwise = (map head xs) : transposeLines (map tail xs)
 
+handleInput :: String -> String
+handleInput input = unlines (transposeLines (lines input))
+
+main :: IO ()
+main = do
+  interact handleInput
+
 #+end_src
 
+#+begin_src
+
+-- in shell
+ghc transposeLines.hs
+
+-- and
+./transposeLines < test.txt
+
+#+end_src
+
+or
+
+#+begin_src
+
+-- in shell
+runghc transposeLines.hs < test.txt
+
+#+end_src
