@@ -736,6 +736,8 @@ runghc transposeLines.hs < test.txt
 
 ** Loops. Explicit Recursion
 
+Example 1.
+
 #+begin_src
 
 // C
@@ -755,7 +757,7 @@ int as_int(char *str) {
 
 -- hs
 
-import           Data.Char (digitToInt)
+import Data.Char (digitToInt)
 
 loop :: Int -> String -> Int
 loop acc [] = acc
@@ -764,5 +766,29 @@ loop acc (x:xs) = loop updatedAcc xs
 
 asInt :: String -> Int
 asInt xs = loop 0 xs
+
+#+end_src
+
+Example 2.
+
+#+begin_src
+
+// C
+void square(double *out, const double *in, size_t length) {
+    for (size_t i = 0; i < length; i++) {
+        out[i] = in[i] * in[i];
+    }
+}
+
+#+end_src
+
+
+#+begin_src
+
+-- hs
+
+square :: [Double] -> [Double]
+square []     = []
+square (x:xs) = x*x : square xs
 
 #+end_src
