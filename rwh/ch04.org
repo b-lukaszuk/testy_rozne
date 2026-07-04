@@ -824,3 +824,28 @@ upperCase []     = []
 upperCase (x:xs) = toUpper x : upperCase xs
 
 #+end_src
+
+** Loops. Mapping
+
+#+begin_src
+
+squareXs :: Num a => [a] -> [a]
+squareXs xs = map square xs
+  where squareX :: Num a => a -> a
+        squareX x = x * x
+
+-- or
+squareXs :: Num a => [a] -> [a]
+squareXs xs = map squareX xs
+  where squareX x = x * x
+
+#+end_src
+
+#+begin_src
+
+import Data.Char (toUpper)
+
+upperCase :: String -> String
+upperCase xs = map toUpper xs
+
+#+end_src
