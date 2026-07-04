@@ -792,3 +792,35 @@ square []     = []
 square (x:xs) = x*x : square xs
 
 #+end_src
+
+Example 3.
+
+#+begin_src
+
+// C
+#include <stdio.h>
+
+char *upercase(const char *in) {
+    char *out = strdup(in);
+
+    if (out != NULL) {
+        for (size_t i = 0; out[i] != '\0'; i++) {
+            out[i] = toupper(out[i]);
+        }
+    }
+    return out;
+}
+
+#+end_src
+
+
+#+begin_src
+
+-- hs
+import Data.Char (toUpper)
+
+upperCase :: String -> String
+upperCase []     = []
+upperCase (x:xs) = toUpper x : upperCase xs
+
+#+end_src
