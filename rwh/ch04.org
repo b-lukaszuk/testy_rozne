@@ -849,3 +849,22 @@ upperCase :: String -> String
 upperCase xs = map toUpper xs
 
 #+end_src
+
+'map' signature
+
+#+begin_src
+
+:t map
+-- map :: (a -> b) -> [a] -> [b]
+
+#+end_src
+
+Own implementation for practice.
+
+#+begin_src
+
+myMap :: (a -> b) -> [a] -> [b]
+myMap _ []      = []
+myMap fn (x:xs) = fn x : myMap fn xs
+
+#+end_src
