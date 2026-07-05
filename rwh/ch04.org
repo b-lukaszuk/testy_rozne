@@ -972,3 +972,20 @@ foldr (/) 100 [5, 2]
 -- and is evaluated from right: (5 / (2 / 100))
 
 #+end_src
+
+
+'Data.List' contains a `foldl'` function that acts like `foldl` but it is not
+lazy and doesn't produce thunks (deferred computation).
+
+#+begin_src
+
+-- DANGER, DO NOT RUN THIS CODE
+foldl (+) 0 [1..1000000000]
+-- freezes, and/or throws error because of stack overflow
+
+-- WARNING, it will likely freeze your computer for a while
+foldl' (+) 0 [1..1000000000]
+-- takes some time, but should return the result
+-- 500000000500000000
+
+#+end_src
