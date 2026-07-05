@@ -958,3 +958,17 @@ myFoldr (/) 100 [5, 2]
 -- since 5 / (2 / 100) is 250
 
 #+end_src
+
+'foldr' replaces the empty list ('()') with the initial accumulator and every
+constructor (':'') in the list with an application of the step function.
+
+So
+
+#+begin_src
+
+foldr (/) 100 [5, 2]
+-- is: foldr (/) 100 (5:2:())
+-- which becomes: 5 / 2 / 100
+-- and is evaluated from right: (5 / (2 / 100))
+
+#+end_src
