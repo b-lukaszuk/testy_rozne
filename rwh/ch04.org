@@ -899,7 +899,7 @@ myFilter odd [1..10]
 
 To be done with 'foldl' and 'foldr'.
 
-Example of foldl:
+Example of 'foldl':
 
 #+begin_src
 
@@ -922,5 +922,39 @@ myFoldl (*) 1 [1..5]
 
 myFoldl (\a x -> x*2 : a) [] [1..2]
 -- [4,2]
+
+-- myFoldl (/) 100 [5,2]
+10.0
+-- since 100 / 5 / 2 is 10
+
+#+end_src
+
+Example of 'foldr':
+
+#+begin_src
+
+:t foldr
+foldr :: (a -> b -> b) -> b -> [a] -> b
+
+#+end_src
+
+#+begin_src
+
+myFoldr :: (a -> b -> b) -> b -> [a] -> b
+myFoldr _ acc []      = acc
+myFoldr fn acc (x:xs) = (fn x (myFoldr fn acc xs))
+
+myFoldr (+) 0 [1..10]
+-- 55
+
+myFoldr (*) 1 [1..5]
+-- 120
+
+myFoldr (\x a -> x*2 : a) [] [1..2]
+-- [2,4]
+
+myFoldr (/) 100 [5, 2]
+-- 250.0
+-- since 5 / (2 / 100) is 250
 
 #+end_src
