@@ -989,3 +989,8 @@ foldl' (+) 0 [1..1000000000]
 -- 500000000500000000
 
 #+end_src
+
+** Further Reading
+
+G. Hutton, A tutorial on the universality and expressiveness of fold.
+to be found online at: https://people.cs.nott.ac.uk/pszgmh/fold.pdf
