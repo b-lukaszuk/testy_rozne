@@ -760,11 +760,30 @@ import Data.Char (digitToInt)
 char2Int :: Int -> Char -> Int
 char2Int acc c = acc * 10 + digitToInt c
 
+converter :: String -> Int
+converter = foldl char2Int 0
+
 asInt :: String -> Int
 asInt (y:ys)
   | y == '-' = negate (converter ys)
   | otherwise = converter (y:ys)
-  where converter = foldl char2Int 0
+
+#+end_src
+
+Or using closures (function definitions inside a function):
+
+#+begin_src
+
+import data.char (digittoint)
+
+asInt :: String -> Int
+asInt (y:ys)
+  | y == '-' = negate (converter ys)
+  | otherwise = converter (y:ys)
+  where char2Int :: Int -> Char -> Int
+        char2Int acc c = acc * 10 + digitToInt c
+        converter :: String -> Int
+        converter = foldl char2Int 0
 
 #+end_src
 
