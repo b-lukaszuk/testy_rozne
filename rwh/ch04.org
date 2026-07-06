@@ -734,6 +734,23 @@ runghc transposeLines.hs < test.txt
 
 #+end_src
 
+*** Exercise 5
+
+Use a fold to rewrite 'asInt'. Expected behavior:
+
+#+begin_src
+
+asInt "101"
+-- 101
+
+asInt "-333"
+-- -333
+
+asInt "1410"
+-- 1410
+
+#+end_src
+
 ** Loops. Explicit Recursion
 
 Example 1.
