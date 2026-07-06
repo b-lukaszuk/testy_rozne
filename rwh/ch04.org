@@ -751,6 +751,23 @@ asInt "1410"
 
 #+end_src
 
+Solution:
+
+#+begin_src
+
+import Data.Char (digitToInt)
+
+char2Int :: Int -> Char -> Int
+char2Int acc c = acc * 10 + digitToInt c
+
+asInt :: String -> Int
+asInt (y:ys)
+  | y == '-' = negate (converter ys)
+  | otherwise = converter (y:ys)
+  where converter = foldl char2Int 0
+
+#+end_src
+
 ** Loops. Explicit Recursion
 
 Example 1.
