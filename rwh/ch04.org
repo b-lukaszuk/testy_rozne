@@ -804,6 +804,8 @@ Write a version of 'group' function.
 
 #+begin_src
 
+:m Data.List
+
 :t group
 -- group :: Eq a => [a] -> [[a]]
 
@@ -819,6 +821,11 @@ Solution:
 myGroup' :: Eq a => [a] -> ([a], [a])
 myGroup' xs = (takeWhile (== (head xs)) xs,
                dropWhile (== (head xs)) xs)
+
+-- or
+myGroup' :: Eq a => [a] -> ([a], [a])
+myGroup' ys@(x:_) = (takeWhile (==x) ys,
+                     dropWhile (==x) ys)
 
 myGroup :: Eq a => [a] -> [[a]]
 myGroup [] = []
