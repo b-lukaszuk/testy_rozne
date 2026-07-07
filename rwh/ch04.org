@@ -791,6 +791,13 @@ asInt (y:ys)
 
 Write a version of 'concat' function using 'foldr'.
 
+#+begin_src
+
+myConcat :: [[a]] -> [a]
+myConcat xxs = foldr (++) [] xxs
+
+#+end_src
+
 ** Loops. Explicit Recursion
 
 Example 1.
