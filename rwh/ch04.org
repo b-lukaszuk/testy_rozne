@@ -787,6 +787,10 @@ asInt (y:ys)
 
 #+end_src
 
+*** Exercise 6
+
+Write a version of 'concat' function using 'foldr'.
+
 ** Loops. Explicit Recursion
 
 Example 1.
