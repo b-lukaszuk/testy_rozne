@@ -798,6 +798,20 @@ myConcat xxs = foldr (++) [] xxs
 
 #+end_src
 
+*** Exercise 7
+
+Write a version of 'group' function.
+
+#+begin_src
+
+:t group
+-- group :: Eq a => [a] -> [[a]]
+
+group [1,1,1,3,2,2,1,1,1]
+-- [[1,1,1],[3],[2,2],[1,1,1]]
+
+#+end_src
+
 ** Loops. Explicit Recursion
 
 Example 1.
