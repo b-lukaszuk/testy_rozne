@@ -812,6 +812,21 @@ group [1,1,1,3,2,2,1,1,1]
 
 #+end_src
 
+Solution:
+
+#+begin_src
+
+myGroup' :: Eq a => [a] -> ([a], [a])
+myGroup' xs = (takeWhile (== (head xs)) xs,
+               dropWhile (== (head xs)) xs)
+
+myGroup :: Eq a => [a] -> [[a]]
+myGroup [] = []
+myGroup xs = fstGroup : myGroup rest
+  where (fstGroup, rest) = myGroup' xs
+
+#+end_src
+
 ** Loops. Explicit Recursion
 
 Example 1.
