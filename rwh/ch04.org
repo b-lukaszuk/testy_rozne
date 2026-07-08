@@ -845,12 +845,32 @@ Rewrite a version of 'any' with a 'fold':
 
 #+end_src
 
-Solution to 'anyy' with a 'fold':
+Solution to 'any' with a 'fold':
 
 #+begin_src
 
 myAny :: (a -> Bool) -> [a] -> Bool
 myAny pred xs = foldr (\x acc -> if pred x then True else acc) False xs
+
+#+end_src
+
+*** Exercise 9
+
+Write a version of 'cycle':
+
+#+begin_src
+
+:t cycle
+cycle :: [a] -> [a]
+
+#+end_src
+
+Solution:
+
+#+begin_src
+
+myCycle :: [a] -> [a]
+myCycle xs = xs ++ myCycle xs
 
 #+end_src
 
