@@ -834,6 +834,26 @@ myGroup xs = fstGroup : myGroup rest
 
 #+end_src
 
+*** Exercise 8
+
+Rewrite a version of 'any' with a 'fold':
+
+#+begin_src
+
+:t any
+-- any :: (a -> Bool) -> [a] -> Bool
+
+#+end_src
+
+Solution to 'anyy' with a 'fold':
+
+#+begin_src
+
+myAny :: (a -> Bool) -> [a] -> Bool
+myAny pred xs = foldr (\x acc -> if pred x then True else acc) False xs
+
+#+end_src
+
 ** Loops. Explicit Recursion
 
 Example 1.
