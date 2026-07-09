@@ -1139,3 +1139,55 @@ to be found online at: https://people.cs.nott.ac.uk/pszgmh/fold.pdf
 
 Anonymous (sometimes called lambda) functions are used in the form
 '(\arg -> do_sth_with_arg)' or '(\arg1 arg2 -> do_sth_with_arg1_and_arg2)'.
+
+** Partial Function Application
+
+Partial function application is named *currying*.
+
+Full function:
+
+#+begin_src
+
+:t dropWhile
+-- dropWhile :: (a -> Bool) -> [a] -> [a]
+
+#+end_src
+
+Partially applied function:
+
+#+begin_src
+
+:m +Data.Char
+:t dropWhile isSpace
+-- dropWhile isSpace :: [Char] -> [Char]
+
+#+end_src
+
+Usage of partially applied functions (easy to create 'lstrip' from some other
+programming languages):
+
+#+begin_src
+
+map (dropWhile isSpace) [" a", "f", "     e"]
+-- ["a","f","e"]
+
+#+end_src
+
+In general, partial function application lets us avoid writing tiresome
+throwaway functions.  In that respect, it's often more useful than anonymous
+functions.
+
+Another example of currying in use:
+
+#+begin_src
+
+niceSum :: [Integer] -> Integer
+niceSum xs = foldl (+) 0 xs
+
+-- or
+
+niceSum :: [Integer] -> Integer
+niceSum = foldl (+) 0
+-- since foldr misses a list
+
+#+end_src
