@@ -1192,7 +1192,7 @@ niceSum = foldl (+) 0
 
 #+end_src
 
-* Sections
+** Sections
 
 *Section* is when you enclose an operator in parentheses and supply its left or
 right argument inside of them to get a partially applied function, e.g.
@@ -1206,3 +1206,25 @@ map (^2) [1,2,3]
 -- [1,4,9]
 
 #+end_src
+
+** As-patterns
+
+As patterns allow you to have a cookie and eat a cookie, e.g.
+
+#+begin_src
+
+suffixes :: [a] -> [[a]]
+suffixes [] = []
+suffixes xs@(_:xs') = xs : suffixes xs'
+
+-- vs.
+
+suffixes :: [a] -> [[a]]
+suffixes [] = []
+suffixes (x:xs) = (x:xs) : suffixes xs
+
+#+end_src
+
+Here, the as-pattern `@xs(_:xs')`` means "bind the variable 'xs' to the value that
+matches the right side of the '@' symbol. As-patterns allow us to share data
+instead of copying it (with '(x:xs)' match).
