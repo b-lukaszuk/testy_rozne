@@ -1191,3 +1191,18 @@ niceSum = foldl (+) 0
 -- since foldr misses a list
 
 #+end_src
+
+* Sections
+
+*Section* is when you enclose an operator in parentheses and supply its left or
+right argument inside of them to get a partially applied function, e.g.
+
+#+begin_src
+
+map (2^) [1,2,3]
+-- [2,4,8]
+
+map (^2) [1,2,3]
+-- [1,4,9]
+
+#+end_src
