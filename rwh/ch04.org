@@ -1262,3 +1262,15 @@ suffixes :: [a] -> [[a]]
 suffixes = init . tails
 
 #+end_src
+
+** Tips for Writing Readable Code
+
+If possible use 'map', 'take', and 'filter' over (tail) recursive functions
+since they are completely general and may have anything in them (it takes more
+time to understand and process them in your head)
+
+'Fold's are in-between tail recursive functions (complete generality) and 'map', take', 'filter' toolbox (that does one thing).
+
+Anonymous functions (lambdas) tend to interrupt the flow of reading piece of
+code. Use them sparingly, make them really simple.'let' and 'where' clauses
+should take precedence over lambdas.
