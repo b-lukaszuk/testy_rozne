@@ -1274,3 +1274,11 @@ time to understand and process them in your head)
 Anonymous functions (lambdas) tend to interrupt the flow of reading piece of
 code. Use them sparingly, make them really simple.'let' and 'where' clauses
 should take precedence over lambdas.
+
+** Space Leaks and Strict Evaluation
+
+One of the places where space leaks in code arise is `foldl`. To prevent it you
+may use `foldl'` - a stricter version of fold that relies on `seq` function that
+forces its first argument to be evaluated. `seq` is not a miracle cure-all for
+memory consumption problems. To tell if `seq` is necessary one needs to measure
+or profile program execution.
