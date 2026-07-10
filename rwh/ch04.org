@@ -1228,3 +1228,37 @@ suffixes (x:xs) = (x:xs) : suffixes xs
 Here, the as-pattern `@xs(_:xs')`` means "bind the variable 'xs' to the value that
 matches the right side of the '@' symbol. As-patterns allow us to share data
 instead of copying it (with '(x:xs)' match).
+
+** Code Through Composition
+
+Example:
+
+#+begin_src
+
+:m +Data.List
+
+compose :: (b -> c) -> (a -> b) -> a -> c
+compose f g x = f (g x)
+
+suffixes :: [a] -> [[a]]
+suffixes xs = compose init tails xs
+
+#+end_src
+
+Luckily, 'compose' is already there:
+
+#+begin_src
+
+:t (.)
+-- (.) :: (b -> c) -> (a -> b) -> a -> c
+
+:m +Data.List
+
+suffixes :: [a] -> [[a]]
+suffixes xs = (init . tails) xs
+
+-- or
+suffixes :: [a] -> [[a]]
+suffixes = init . tails
+
+#+end_src
