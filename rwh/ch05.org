@@ -20,3 +20,17 @@ pairs. A key is always a string. A value is either:
 - null,
 - array,
 - object (so JSON is a recursive type)
+
+We may express it in our program as:
+
+#+begin_src
+
+data JValue = JString String
+            | JNumber Double
+            | JBool Bool
+            | JNull
+            | JObject [(String, JValue)]
+            | JArray [JValue]
+            deriving (Eq, Ord, Show)
+
+#+end_src
