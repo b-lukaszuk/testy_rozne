@@ -4,3 +4,19 @@
 #+OPTIONS: \n: t
 
 * JSON library
+** JSON - Basic Info
+
+see also: https://en.wikipedia.org/wiki/JSON
+
+JSON stands for JavaScript Object Notation. It is often used for config files
+and for sending structured data over a network.
+
+A JSON object resembles a Python's dictionary. A JSON object contains key-value
+pairs. A key is always a string. A value is either:
+
+- string,
+- number,
+- boolean,
+- null,
+- array,
+- object (so JSON is a recursive type)
