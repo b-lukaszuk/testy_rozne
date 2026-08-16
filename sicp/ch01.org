@@ -137,12 +137,12 @@ areApproxEqual x y = absDiff < tolerance
 square :: Num a => a -> a
 square x = x * x
 
-sqrtIter' :: (Ord t, Fractional t) => t -> t -> t
+sqrtIter' :: (Ord a, Fractional a) => a -> a -> a
 sqrtIter' guess x
   | areApproxEqual (square guess) x = guess
   | otherwise = sqrtIter' (getNewGuessForSqrtOfX guess x) x
 
-sqrtIter :: (Ord t, Fractional t) => t -> t
+sqrtIter :: (Ord a, Fractional a) => a -> a
 sqrtIter x = sqrtIter' 1 x
 
 #+end_src
