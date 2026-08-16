@@ -27,8 +27,14 @@ read
 circumference :: Floating a => a -> a
 circumference r = 2 * pi * r
 
-circumference 10
--- 62.8318
+#+end_src
+
+tests:
+
+#+begin_src
+
+λ> circumference 10
+62.8318
 
 #+end_src
 
@@ -39,24 +45,38 @@ circumference 10
 square :: Num a => a -> a
 square x = x * x
 
-square 21
--- 441
+#+end_src
 
-square $ 2 + 5
--- 49
+tests:
 
-square $ square 3
--- 81
+#+begin_src
+
+λ> square 21
+441
+
+λ> square $ 2 + 5
+49
+
+λ> square $ square 3
+81
 
 #+end_src
+
+compound procedure:
 
 #+begin_src
 
 sumOfSquares :: Num a => a -> a -> a
 sumOfSquares x y = square x + square y
 
-sumOfSquares 3 4
--- 25
+#+end_src
+
+tests:
+
+#+begin_src
+
+λ> sumOfSquares 3 4
+25
 
 #+end_src
 
