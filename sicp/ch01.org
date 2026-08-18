@@ -168,3 +168,7 @@ tests:
 *** 1.1.8. Procedures as Black-Box Abstractions
 
 read
+
+**** Local names
+
+read
