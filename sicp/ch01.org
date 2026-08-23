@@ -171,4 +171,25 @@ read
 
 **** Local names
 
-read
+#+begin_src
+
+sqrtIter :: (Ord a, Fractional a) => a -> a
+sqrtIter x = sqrtIter' 1.0 x
+  where getAvg x y = (x + y) / 2
+        getNewGuess oldGuess x = getAvg oldGuess $ x / oldGuess
+        areApproxEqual x y = abs (x - y) < 0.001
+        square x = x * x
+        sqrtIter' guess x = if areApproxEqual (square guess) x
+          then guess
+          else sqrtIter' (getNewGuess guess x) x
+
+#+end_src
+
+and
+
+#+begin_src
+
+λ> sqrtIter 9
+3.00009155413138
+
+#+end_src
