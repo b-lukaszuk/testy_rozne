@@ -128,11 +128,11 @@ getAvg x y = (x + y) / 2
 getNewGuessForSqrtOfX :: Fractional a => a -> a -> a
 getNewGuessForSqrtOfX oldGuess x = getAvg oldGuess $ x / oldGuess
 
+getAbsDiff :: Num a => a -> a -> a
+getAbsDiff x y = abs $ x - y
+
 areApproxEqual :: (Ord a, Fractional a) => a -> a -> Bool
-areApproxEqual x y = absDiff < tolerance
-  where diff = x - y
-        absDiff = abs diff
-        tolerance = 0.001
+areApproxEqual x y = getAbsDiff x y < 0.001
 
 square :: Num a => a -> a
 square x = x * x
