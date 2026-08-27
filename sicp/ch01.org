@@ -181,6 +181,50 @@ x - value for which cube root is to be calculated ($\sqrt[3]{x}$ )
 
 y - old guess
 
+#+begin_src
+
+pow' :: (Ord a, Num a, Num b) => b -> a -> b -> b
+pow' base exponent acc
+  | exponent < 1 = acc
+  | otherwise = pow' base (exponent - 1) (acc * base)
+
+pow :: (Num a, Ord b, Num b) => a -> b -> a
+pow base exponent = pow' base exponent 1
+
+getNewGuess :: Fractional a => a -> a -> a
+getNewGuess oldGuess x = (x / (pow oldGuess 2) + (2 * oldGuess)) / 3
+
+getAbsDiff :: Num a => a -> a -> a
+getAbsDiff x y = abs $ x - y
+
+areApproxEqual :: (Ord a, Fractional a) => a -> a -> Bool
+areApproxEqual x y = getAbsDiff x y < 0.001
+
+cbrtIter' :: (Ord a, Fractional a) => a -> a -> a
+cbrtIter' guess x = if areApproxEqual (pow guess 3) x
+  then guess
+  else cbrtIter' (getNewGuess guess x) x
+
+cbrtIter :: (Ord a, Fractional a) => a -> a
+cbrtIter x = cbrtIter' 1 x
+
+#+end_src
+
+and
+
+#+begin_src
+
+λ> cbrtIter 8
+2.000004911675504
+
+λ> cbrtIter 27
+3.0000005410641766
+
+λ> cbrtIter 64
+4.000017449510739
+
+#+end_src
+
 *** 1.1.8. Procedures as Black-Box Abstractions
 
 read
