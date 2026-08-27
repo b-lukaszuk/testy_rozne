@@ -171,7 +171,7 @@ Implement Newton's method for finding cube roots.
 
 Formula for finding a new, better guess:
 
-$$ z = \frac{x/{y^{2}}+2y}{3} $$
+$z = \frac{x/y^{2}+2y}{3}$
 
 where:
 
