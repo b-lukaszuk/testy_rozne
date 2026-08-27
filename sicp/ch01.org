@@ -171,7 +171,7 @@ Implement Newton's method for finding cube roots.
 
 Formula for finding a new, better guess:
 
-$z = \frac{x/y^{2}+2y}{3}$
+$$z = \frac{x/y^{2}+2y}{3}$$
 
 where:
 
@@ -222,6 +222,53 @@ and
 
 λ> cbrtIter 64
 4.000017449510739
+
+λ> cbrtIter 125
+5.000000000287929
+
+#+end_src
+
+or with local names
+
+#+begin_src
+
+cbrtIter :: (Ord a, Fractional a) => a -> a
+cbrtIter x = cbrtIter' 1 x
+  where
+    pow' :: (Ord a, Num a, Num b) => b -> a -> b -> b
+    pow' base exponent acc = if exponent < 1
+      then acc
+      else pow' base (exponent - 1) (acc * base)
+    pow :: (Num a, Ord b, Num b) => a -> b -> a
+    pow base exponent = pow' base exponent 1
+    getNewGuess :: Fractional a => a -> a -> a
+    getNewGuess oldGuess x = (x / (pow oldGuess 2) + (2 * oldGuess)) / 3
+    getAbsDiff :: Num a => a -> a -> a
+    getAbsDiff x y = abs $ x - y
+    areApproxEqual :: (Ord a, Fractional a) => a -> a -> Bool
+    areApproxEqual x y = getAbsDiff x y < 0.001
+    cbrtIter' :: (Ord a, Fractional a) => a -> a -> a
+    cbrtIter' guess x = if areApproxEqual (pow guess 3) x
+      then guess
+      else cbrtIter' (getNewGuess guess x) x
+
+#+end_src
+
+and
+
+#+begin_src
+
+λ> cbrtIter 8
+2.000004911675504
+
+λ> cbrtIter 27
+3.0000005410641766
+
+λ> cbrtIter 64
+4.000017449510739
+
+λ> cbrtIter 125
+5.000000000287929
 
 #+end_src
 
