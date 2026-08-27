@@ -272,6 +272,54 @@ and
 
 #+end_src
 
+or intermediate version
+
+#+begin_src
+
+getAbsDiff :: Num a => a -> a -> a
+getAbsDiff x y = abs $ x - y
+
+areApproxEqual :: (Ord a, Fractional a) => a -> a -> Bool
+areApproxEqual x y = getAbsDiff x y < 0.001
+
+getPower :: (Num a, Ord b, Num b) => a -> b -> a
+getPower base exponent = getPower' base exponent 1
+  where
+    getPower' :: (Ord a, Num a, Num b) => b -> a -> b -> b
+    getPower' base exponent acc = if exponent < 1
+      then acc
+      else getPower' base (exponent - 1) (acc * base)
+
+cbrtIter :: (Ord a, Fractional a) => a -> a
+cbrtIter x = cbrtIter' 1 x
+  where
+    getNewGuess :: Fractional a => a -> a -> a
+    getNewGuess oldGuess x = (x / (getPower oldGuess 2) + (2 * oldGuess)) / 3
+    cbrtIter' :: (Ord a, Fractional a) => a -> a -> a
+    cbrtIter' guess x = if areApproxEqual (getPower guess 3) x
+      then guess
+      else cbrtIter' (getNewGuess guess x) x
+
+#+end_src
+
+and
+
+#+begin_src
+
+λ> cbrtIter 8
+2.000004911675504
+
+λ> cbrtIter 27
+3.0000005410641766
+
+λ> cbrtIter 64
+4.000017449510739
+
+λ> cbrtIter 125
+5.000000000287929
+
+#+end_src
+
 *** 1.1.8. Procedures as Black-Box Abstractions
 
 read
@@ -332,6 +380,63 @@ and then
 
 λ> sqrtIter 9
 3.00009155413138
+
+#+end_src
+
+or intermediate version
+
+#+begin_src
+
+λ> sqrtIter 9
+3.00009155413138
+
+#+end_src
+
+or intermediate version
+
+#+begin_src
+
+getAbsDiff :: Num a => a -> a -> a
+getAbsDiff x y = abs $ x - y
+
+areApproxEqual :: (Ord a, Fractional a) => a -> a -> Bool
+areApproxEqual x y = getAbsDiff x y < 0.001
+
+getPower :: (Num a, Ord b, Num b) => a -> b -> a
+getPower base exponent = getPower' base exponent 1
+  where
+    getPower' :: (Ord a, Num a, Num b) => b -> a -> b -> b
+    getPower' base exponent acc = if exponent < 1
+      then acc
+      else getPower' base (exponent - 1) (acc * base)
+
+sqrtIter :: (Ord a, Fractional a) => a -> a
+sqrtIter x = sqrtIter' 1.0 x
+  where
+    getNewGuess :: Fractional a => a -> a -> a
+    getNewGuess oldGuess x = getAvg oldGuess $ x / oldGuess
+    sqrtIter' :: (Ord a, Fractional a) => a -> a -> a
+    sqrtIter' guess x = if areApproxEqual (getPower guess 2) x
+      then guess
+      else sqrtIter' (getNewGuess guess x) x
+
+#+end_src
+
+and
+
+#+begin_src
+
+λ> sqrtIter 4
+2.0000000929222947
+
+λ> sqrtIter 9
+3.00009155413138
+
+λ> sqrtIter 16
+4.000000636692939
+
+λ> sqrtIter 25
+5.000023178253949
 
 #+end_src
 
