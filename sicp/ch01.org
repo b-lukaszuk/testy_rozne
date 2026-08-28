@@ -383,7 +383,9 @@ getPower base exponent = getPower' base exponent 1
 sqrtIter :: (Ord a, Fractional a) => a -> a
 sqrtIter x = sqrtIter' 1.0 x
   where
+    getNewGuess :: (Fractional a) => a -> a -> a
     getNewGuess oldGuess x = getAvg oldGuess $ x / oldGuess
+    sqrtIter' :: (Ord a, Fractional a) => a -> a -> a
     sqrtIter' guess x = if areApproxEqual (getPower guess 2) x
       then guess
       else sqrtIter' (getNewGuess guess x) x
