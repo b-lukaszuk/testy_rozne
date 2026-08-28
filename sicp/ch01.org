@@ -372,6 +372,105 @@ and
 
 #+end_src
 
+**** Local Names (Lexical Scoping)
+
+without type declarations in sub-functions
+
+#+begin_src
+
+getAbsDiff :: Num a => a -> a -> a
+getAbsDiff x y = abs $ x - y
+
+areApproxEqual :: (Ord a, Fractional a) => a -> a -> Bool
+areApproxEqual x y = getAbsDiff x y < 0.001
+
+getPower :: (Num a, Ord b, Num b) => a -> b -> a
+getPower base exponent = getPower' base exponent 1
+  where
+    getPower' :: (Ord a, Num a, Num b) => b -> a -> b -> b
+    getPower' base exponent acc = if exponent < 1
+      then acc
+      else getPower' base (exponent - 1) (acc * base)
+
+sqrtIter :: (Ord a, Fractional a) => a -> a
+sqrtIter x = sqrtIter' 1.0
+  where
+    getNewGuess oldGuess = getAvg oldGuess $ x / oldGuess
+    sqrtIter' guess = if areApproxEqual (getPower guess 2) x
+      then guess
+      else sqrtIter' (getNewGuess guess)
+
+#+end_src
+
+and
+
+#+begin_src
+
+λ> sqrtIter 4
+2.0000000929222947
+
+λ> sqrtIter 9
+3.00009155413138
+
+λ> sqrtIter 16
+4.000000636692939
+
+λ> sqrtIter 25
+5.000023178253949
+
+#+end_src
+
+with type declarations in sub-functions
+
+#+begin_src
+
+getAbsDiff :: Num a => a -> a -> a
+getAbsDiff x y = abs $ x - y
+
+areApproxEqual :: (Ord a, Fractional a) => a -> a -> Bool
+areApproxEqual x y = getAbsDiff x y < 0.001
+
+getPower :: (Num a, Ord b, Num b) => a -> b -> a
+getPower base exponent = getPower' base exponent 1
+  where
+    getPower' :: (Ord a, Num a, Num b) => b -> a -> b -> b
+    getPower' base exponent acc = if exponent < 1
+      then acc
+      else getPower' base (exponent - 1) (acc * base)
+
+
+{-# LANGUAGE ScopedTypeVariables #-}
+
+sqrtIter :: forall a. (Ord a, Fractional a) => a -> a
+sqrtIter x = sqrtIter' 1.0
+  where
+    getNewGuess :: a -> a
+    getNewGuess oldGuess = getAvg oldGuess $ x / oldGuess
+    sqrtIter' :: a -> a
+    sqrtIter' guess = if areApproxEqual (getPower guess 2) x
+      then guess
+      else sqrtIter' (getNewGuess guess)
+
+#+end_src
+
+and
+
+#+begin_src
+
+λ> sqrtIter 4
+2.0000000929222947
+
+λ> sqrtIter 9
+3.00009155413138
+
+λ> sqrtIter 16
+4.000000636692939
+
+λ> sqrtIter 25
+5.000023178253949
+
+#+end_src
+
 ** 1.2. Procedures and the Process They Generate
 
 read
