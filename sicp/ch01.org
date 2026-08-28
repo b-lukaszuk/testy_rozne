@@ -276,6 +276,42 @@ and
 
 #+end_src
 
+or with local names (lexical scoping)
+
+#+begin_src
+
+{-# LANGUAGE ScopedTypeVariables #-}
+
+cbrtIter :: forall a. (Ord a, Fractional a) => a -> a
+cbrtIter x = cbrtIter' 1.0
+  where
+    getNewGuess :: a -> a
+    getNewGuess oldGuess = (x / (getPower oldGuess 2) + (2 * oldGuess)) / 3
+    cbrtIter' :: a -> a
+    cbrtIter' guess = if areApproxEqual (getPower guess 3) x
+      then guess
+      else cbrtIter' (getNewGuess guess)
+
+#+end_src
+
+and
+
+#+begin_src
+
+λ> cbrtIter 8
+2.000004911675504
+
+λ> cbrtIter 27
+3.0000005410641766
+
+λ> cbrtIter 64
+4.000017449510739
+
+λ> cbrtIter 125
+5.000000000287929
+
+#+end_src
+
 *** 1.1.8. Procedures as Black-Box Abstractions
 
 read
