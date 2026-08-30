@@ -512,3 +512,7 @@ and
 ** 1.2. Procedures and the Process They Generate
 
 read
+
+*** 1.2.1 Linear Recursion and Iteration
+
+read
