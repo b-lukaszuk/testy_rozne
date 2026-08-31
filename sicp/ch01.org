@@ -516,3 +516,7 @@ read
 *** 1.2.1 Linear Recursion and Iteration
 
 read
+
+*** 1.2.2 Tree Recursion
+
+read
