@@ -564,4 +564,35 @@ and
 
 **** Example: Counting Change
 
-read
+#+begin_src
+
+getFirstDenomination :: Int -> Int
+getFirstDenomination kindsOfCoins
+  | kindsOfCoins == 1 = 1
+  | kindsOfCoins == 2 = 5
+  | kindsOfCoins == 3 = 10
+  | kindsOfCoins == 4 = 25
+  | kindsOfCoins == 5 = 50
+  | otherwise = undefined
+
+countChange' :: Int -> Int -> Int
+countChange' amount kindsOfCoins
+  | amount == 0 = 1
+  | (amount < 0) || (kindsOfCoins == 0) = 0
+  | otherwise =
+      countChange' amount (kindsOfCoins - 1) +
+      countChange' (amount - getFirstDenomination kindsOfCoins) kindsOfCoins
+
+countChange :: Int -> Int
+countChange amount = countChange' amount 5
+
+#+end_src
+
+and
+
+#+begin_src
+
+λ> countChange 100
+292
+
+#+end_src
