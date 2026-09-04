@@ -89,4 +89,28 @@ module SimpleJSON
 
 #+end_src
 
-A file can only contain 1 module. The module name starts with a capital letter and matches the name of its source file (exception Main module).
+A file can only contain 1 module. The module name starts with a capital letter
+and matches the name of its source file (exception Main module). Parentheses
+contain a list of exports, the liens following `where` are a module's
+body/definitions. `JValue(..)` means we export the type and all of its
+constructors.
+
+using
+
+#+begin_src
+
+-- file: ch05/SimpleJSON.hs
+module SimpleJSON where
+
+#+end_src
+
+exports everything, whereas
+
+#+begin_src
+
+-- file: ch05/SimpleJSON.hs
+module SimpleJSON () where
+
+#+end_src
+
+exports nothing (empty export list).
