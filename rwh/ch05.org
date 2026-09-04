@@ -114,3 +114,16 @@ module SimpleJSON () where
 #+end_src
 
 exports nothing (empty export list).
+
+** Compilation
+
+#+begin_src
+
+ghc -c SimpleJSON.hs
+
+#+end_src
+
+`-c` is a linking option, that tells the compiler to only generate an object
+code (`SimpleJSON.o` - object file, `SimpleJSON.hi` - interface file). Without
+`-c` the compiler would attempt to generate a complete executable, which
+requires `main` function.
