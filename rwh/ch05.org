@@ -143,3 +143,17 @@ main :: IO ()
 main = print (JObject [("foo", JNumber 1), ("bar", JBool False)])
 
 #+end_src
+
+Module imports must appear at the beginning of a module, right after the module
+declaration, but before other code.
+
+Now we build program with:
+
+#+begin_src
+
+ghc -o simple Main.hs SimpleJSON.hs
+
+#+end_src
+
+The program will try to create executable. The `-o` is the name of the
+executable to be created (on Windows it will be with `.exe` suffix).
