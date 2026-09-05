@@ -127,3 +127,19 @@ ghc -c SimpleJSON.hs
 code (`SimpleJSON.o` - object file, `SimpleJSON.hi` - interface file). Without
 `-c` the compiler would attempt to generate a complete executable, which
 requires `main` function.
+
+** Program with Imports
+
+The entry point of a program is `main` function inside `Main.hs` file:
+
+#+begin_src
+
+-- file ch05/Main.hs
+module Main (main) where
+
+import           SimpleJSON
+
+main :: IO ()
+main = print (JObject [("foo", JNumber 1), ("bar", JBool False)])
+
+#+end_src
