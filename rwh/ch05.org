@@ -157,3 +157,7 @@ ghc -o simple Main.hs SimpleJSON.hs
 
 The program will try to create executable. The `-o` is the name of the
 executable to be created (on Windows it will be with `.exe` suffix).
+
+We must explicitly list every file that contains the code thet should end in the
+executable. For compilation one can pass a mixture of source and object (like
+`SimpleJSON.o`) files.
