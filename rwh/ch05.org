@@ -190,3 +190,14 @@ renderJValue (JArray a)         = "[" ++ values a ++ "]"
 
 
 #+end_src
+
+Separation of pure (`renderJValue`) code from impure (`putJValue`).
+
+#+begin_src
+
+-- file ch05/PutJSON.hs continued
+
+putJValue :: JValue -> IO ()
+putJValue v = putStrLn (renderJValue v)
+
+#+end_src
