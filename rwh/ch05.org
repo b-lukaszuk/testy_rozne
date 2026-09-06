@@ -201,3 +201,20 @@ putJValue :: JValue -> IO ()
 putJValue v = putStrLn (renderJValue v)
 
 #+end_src
+
+** Type Inference - double edge sword
+
+Despite a powerful type inference system one should add types to avoid errors,
+further own understanding of the code, ease oneself with code maintenance, avoid
+disagreements with the compiler, e.g.
+
+#+begin_src
+
+upcaseFirst (c:cs) = toUpper c -- forgot ":cs" here
+
+#+end_src
+
+Here the programmer wanted type: `String -> String`, but got `String -> Char`
+(the correct type inferred by the compiler based on the function definition) and
+since they didn't add types they remain unaware of it. The mismatch will occur
+somewhere else and will be more difficult to pinpoint and debug.
