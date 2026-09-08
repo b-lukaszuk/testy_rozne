@@ -241,3 +241,31 @@ renderJValue (JString str) = string str
 #+end_src
 
 The `text`, `double`, and `string` functions will be defined later by our `Prettify` module.
+
+** Sane Code Development
+
+Hints:
+
+- try to write small pieces of code and compile it often,
+- write a skeleton of functions that you will replace with the proper code later
+
+Exemplary code:
+
+#+begin_src
+
+-- file: ch05/PrettyStub.hs where
+
+import           SimpleJSON
+
+data Doc = ToBeDefined deriving (Show)
+
+string :: String -> Doc
+string str = undefined
+
+text :: String -> Doc
+text str = undefined
+
+double :: Double -> Doc
+double num = undefined
+
+#+end_src
