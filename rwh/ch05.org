@@ -229,7 +229,7 @@ It's initial contents will be something like:
 
 #+begin_src
 
--- file: ch05/PrettyJSON where
+-- file: ch05/PrettyJSON.hs where
 
 renderJValue :: JValue -> Doc
 renderJValue (JBool True)  = text "true"
@@ -269,3 +269,6 @@ double :: Double -> Doc
 double num = undefined
 
 #+end_src
+
+The value `undefined` has the type `a`, so it always typechecks, but will crash
+when evaluated in the REPL. We use it to satisfy the compiler and type checker.
