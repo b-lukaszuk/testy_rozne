@@ -218,3 +218,26 @@ Here the programmer wanted type: `String -> String`, but got `String -> Char`
 (the correct type inferred by the compiler based on the function definition) and
 since they didn't add types they remain unaware of it. The mismatch will occur
 somewhere else and will be more difficult to pinpoint and debug.
+
+** General Rendering
+
+Let's try to build a simplified pretty printing library called `Prettify`.
+
+The library will render to an abstract type called `Doc` (to be defined later).
+
+It's initial contents will be something like:
+
+#+begin_src
+
+-- file: ch05/PrettyJSON where
+
+renderJValue :: JValue -> Doc
+renderJValue (JBool True)  = text "true"
+renderJValue (JBool False) = text "false"
+renderJValue JNull         = text "null"
+renderJValue (JNumber num) = double num
+renderJValue (JString str) = string str
+
+#+end_src
+
+The `text`, `double`, and `string` functions will be defined later by our `Prettify` module.
